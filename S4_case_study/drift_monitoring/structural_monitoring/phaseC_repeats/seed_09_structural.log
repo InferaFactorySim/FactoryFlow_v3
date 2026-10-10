@@ -1,0 +1,113 @@
+INFO:__main__:[GraphStateServer] Listening on port 8000
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Reload thread started (interval=10.0s)
+INFO:pika.adapters.utils.connection_workflow:Pika version 1.4.4 connecting to ('172.21.0.5', 5672)
+INFO:pika.adapters.utils.io_services_utils:Socket connected: <socket.socket fd=7, family=2, type=1, proto=6, laddr=('172.21.0.15', 43188), raddr=('172.21.0.5', 5672)>
+INFO:pika.adapters.utils.connection_workflow:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7c95bdcf6750>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7c95bdcf6750> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+INFO:pika.adapters.utils.connection_workflow:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7c95bdcf6750> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+INFO:pika.adapters.utils.connection_workflow:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7c95bdcf6750> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+INFO:pika.adapters.blocking_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7c95bdcf6750> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+INFO:pika.adapters.blocking_connection:Created channel=1
+INFO:pika.adapters.blocking_connection:Created channel=2
+INFO:__main__:[DriftDetectionConsumer] Connected to RabbitMQ at rabbitmq
+INFO:__main__:[DriftDetectionConsumer] Periodic reconciliation started (interval=1.0s)
+INFO:__main__:[DriftDetectionConsumer] Consuming events...
+INFO:__main__:[DriftDetectionConsumer] Runtime settings applied (reconciliation interval=1.0s)
+INFO:__main__:[MultiSinkDriftDetector] New sink registered: TOP.sink
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M06: Transition TOP.Line_06.M06 → TOP.Line_06.B06_07 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M08: Transition TOP.Line_06.M08 → TOP.Line_06.CV08_09 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.BMID04_05: Transition TOP.Line_06.BMID04_05 → TOP.Line_06.M05 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.CV03_04: Transition TOP.Line_06.CV03_04 → TOP.Line_06.M04 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.B01_02: Transition TOP.Line_06.B01_02 → TOP.Line_06.M02 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.CV05_06: Transition TOP.Line_06.CV05_06 → TOP.Line_06.M06 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.B07_08: Transition TOP.Line_06.B07_08 → TOP.Line_06.M08 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.CV00_01: Transition TOP.Line_06.CV00_01 → TOP.Line_06.M01 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M04: Transition TOP.Line_06.M04 → TOP.Line_06.BMID04_05 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M07: Transition TOP.Line_06.M07 → TOP.Line_06.B07_08 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M02: Transition TOP.Line_06.M02 → TOP.Line_06.B02_03 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.B06_07: Transition TOP.Line_06.B06_07 → TOP.Line_06.M07 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.src: Transition TOP.src → TOP.B_IN_06 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.B_OUT_06: Transition TOP.B_OUT_06 → TOP.sink is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M03: Transition TOP.Line_06.M03 → TOP.Line_06.CV03_04 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.B_IN_06: Transition TOP.B_IN_06 → TOP.Line_06.M00 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.B02_03: Transition TOP.Line_06.B02_03 → TOP.Line_06.M03 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M05: Transition TOP.Line_06.M05 → TOP.Line_06.CV05_06 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M00: Transition TOP.Line_06.M00 → TOP.Line_06.CV00_01 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M01: Transition TOP.Line_06.M01 → TOP.Line_06.B01_02 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.CV08_09: Transition TOP.Line_06.CV08_09 → TOP.Line_06.M09 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_06.M09: Transition TOP.Line_06.M09 → TOP.B_OUT_06 is in Digital Twin but not seen in real system for 62 simulation-time units (window=60 simulation-time units)  (sim_time=62.0)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M06: Transition TOP.Line_06.M06 → TOP.Line_06.B06_07 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M08: Transition TOP.Line_06.M08 → TOP.Line_06.CV08_09 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.BMID04_05: Transition TOP.Line_06.BMID04_05 → TOP.Line_06.M05 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.CV03_04: Transition TOP.Line_06.CV03_04 → TOP.Line_06.M04 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.B01_02: Transition TOP.Line_06.B01_02 → TOP.Line_06.M02 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.CV05_06: Transition TOP.Line_06.CV05_06 → TOP.Line_06.M06 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.B07_08: Transition TOP.Line_06.B07_08 → TOP.Line_06.M08 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.CV00_01: Transition TOP.Line_06.CV00_01 → TOP.Line_06.M01 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M04: Transition TOP.Line_06.M04 → TOP.Line_06.BMID04_05 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M07: Transition TOP.Line_06.M07 → TOP.Line_06.B07_08 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M02: Transition TOP.Line_06.M02 → TOP.Line_06.B02_03 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.B06_07: Transition TOP.Line_06.B06_07 → TOP.Line_06.M07 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.src: Transition TOP.src → TOP.B_IN_06 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.B_OUT_06: Transition TOP.B_OUT_06 → TOP.sink seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M03: Transition TOP.Line_06.M03 → TOP.Line_06.CV03_04 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.B_IN_06: Transition TOP.B_IN_06 → TOP.Line_06.M00 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.B02_03: Transition TOP.Line_06.B02_03 → TOP.Line_06.M03 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M05: Transition TOP.Line_06.M05 → TOP.Line_06.CV05_06 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M00: Transition TOP.Line_06.M00 → TOP.Line_06.CV00_01 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M01: Transition TOP.Line_06.M01 → TOP.Line_06.B01_02 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.CV08_09: Transition TOP.Line_06.CV08_09 → TOP.Line_06.M09 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DriftDetector] [WARNING] resolved removed_transition @ TOP.Line_06.M09: Transition TOP.Line_06.M09 → TOP.B_OUT_06 seen again in real system  (sim_time=63.6)
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.src: Transition TOP.src → TOP.B_IN_00 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M08: Transition TOP.Line_00.M08 → TOP.Line_00.CV08_09 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.CV05_06: Transition TOP.Line_00.CV05_06 → TOP.Line_00.M06 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.B_OUT_00: Transition TOP.B_OUT_00 → TOP.sink is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.CV08_09: Transition TOP.Line_00.CV08_09 → TOP.Line_00.M09 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M00: Transition TOP.Line_00.M00 → TOP.Line_00.CV00_01 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M02: Transition TOP.Line_00.M02 → TOP.Line_00.B02_03 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M05: Transition TOP.Line_00.M05 → TOP.Line_00.CV05_06 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.B02_03: Transition TOP.Line_00.B02_03 → TOP.Line_00.M03 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.B07_08: Transition TOP.Line_00.B07_08 → TOP.Line_00.M08 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M03: Transition TOP.Line_00.M03 → TOP.Line_00.CV03_04 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.B01_02: Transition TOP.Line_00.B01_02 → TOP.Line_00.M02 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.B_IN_00: Transition TOP.B_IN_00 → TOP.Line_00.M00 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.BMID04_05: Transition TOP.Line_00.BMID04_05 → TOP.Line_00.M05 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M09: Transition TOP.Line_00.M09 → TOP.B_OUT_00 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.CV03_04: Transition TOP.Line_00.CV03_04 → TOP.Line_00.M04 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.B06_07: Transition TOP.Line_00.B06_07 → TOP.Line_00.M07 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.CV00_01: Transition TOP.Line_00.CV00_01 → TOP.Line_00.M01 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M07: Transition TOP.Line_00.M07 → TOP.Line_00.B07_08 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M01: Transition TOP.Line_00.M01 → TOP.Line_00.B01_02 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M06: Transition TOP.Line_00.M06 → TOP.Line_00.B06_07 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DriftDetector] [WARNING] active removed_transition @ TOP.Line_00.M04: Transition TOP.Line_00.M04 → TOP.Line_00.BMID04_05 is in Digital Twin but not seen in real system for 60 simulation-time units (window=60 simulation-time units)  (sim_time=258.5)
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types
+INFO:__main__:[DigitalTwinGraph] Loaded: 211 nodes, 220 edges, 10 path types

@@ -1,0 +1,936 @@
+{
+ "previous": [
+  [
+   "ref",
+   0,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5263.0,
+     "throughput_items_per_unit": 1.31575,
+     "mean_cycle_time": 50.31701072994904,
+     "max_cycle_time": 71.19565467828579,
+     "mean_machine_utilisation_pct": 55.909185317339144,
+     "mean_machine_blocked_pct": 0.0029489404608421805,
+     "mean_queue_occupancy_items": 10.712066008295318,
+     "total_energy_MJ": 1633.6877384270417,
+     "energy_per_item_kJ": 310.40998260061593,
+     "mean_plant_power_kW": 408.42193460676043
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5066,
+     "throughput_items_per_unit": 1.333157894736842,
+     "mean_cycle_time": 55.45726471880567,
+     "max_cycle_time": 75.44387959970845,
+     "mean_machine_utilisation_pct": 62.15166384561045,
+     "mean_machine_blocked_pct": 0.002810832062224156,
+     "mean_queue_occupancy_items": 11.795545761993587,
+     "total_energy_MJ": 1708.270385738799,
+     "energy_per_item_kJ": 337.20299757970764,
+     "mean_plant_power_kW": 449.5448383523155
+    }
+   }
+  ],
+  [
+   "dt0",
+   0,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5266.0,
+     "throughput_items_per_unit": 1.3165,
+     "mean_cycle_time": 50.39849174739102,
+     "max_cycle_time": 74.17715916245993,
+     "mean_machine_utilisation_pct": 55.8822806723785,
+     "mean_machine_blocked_pct": 0.006253055981641964,
+     "mean_queue_occupancy_items": 10.855056372563368,
+     "total_energy_MJ": 1633.1678655208677,
+     "energy_per_item_kJ": 310.13442186115986,
+     "mean_plant_power_kW": 408.29196638021693
+    }
+   }
+  ],
+  [
+   "dt1",
+   0,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5060,
+     "throughput_items_per_unit": 1.331578947368421,
+     "mean_cycle_time": 55.45324971122019,
+     "max_cycle_time": 75.40568827633433,
+     "mean_machine_utilisation_pct": 62.23358760625395,
+     "mean_machine_blocked_pct": 0.002424537450990915,
+     "mean_queue_occupancy_items": 11.693309520895864,
+     "total_energy_MJ": 1709.8969078171535,
+     "energy_per_item_kJ": 337.9242900824414,
+     "mean_plant_power_kW": 449.9728704781983
+    }
+   }
+  ],
+  [
+   "ref",
+   1,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5268.0,
+     "throughput_items_per_unit": 1.317,
+     "mean_cycle_time": 50.56924315343226,
+     "max_cycle_time": 74.85468248666575,
+     "mean_machine_utilisation_pct": 55.93112269835688,
+     "mean_machine_blocked_pct": 0.004352573575395922,
+     "mean_queue_occupancy_items": 11.023141343916844,
+     "total_energy_MJ": 1633.5820598947514,
+     "energy_per_item_kJ": 310.0953037005982,
+     "mean_plant_power_kW": 408.3955149736878
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5065,
+     "throughput_items_per_unit": 1.3328947368421054,
+     "mean_cycle_time": 55.625379998772736,
+     "max_cycle_time": 75.05198472807933,
+     "mean_machine_utilisation_pct": 62.30154331588812,
+     "mean_machine_blocked_pct": 0.00640101349087002,
+     "mean_queue_occupancy_items": 11.87110941461759,
+     "total_energy_MJ": 1710.5321305219272,
+     "energy_per_item_kJ": 337.71611658873195,
+     "mean_plant_power_kW": 450.14003434787554
+    }
+   }
+  ],
+  [
+   "dt0",
+   1,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5265.0,
+     "throughput_items_per_unit": 1.31625,
+     "mean_cycle_time": 50.34330187128106,
+     "max_cycle_time": 73.02051432978487,
+     "mean_machine_utilisation_pct": 55.899884539339794,
+     "mean_machine_blocked_pct": 0.005236600350361271,
+     "mean_queue_occupancy_items": 10.753806169906708,
+     "total_energy_MJ": 1633.1661823583593,
+     "energy_per_item_kJ": 310.1930070956048,
+     "mean_plant_power_kW": 408.2915455895899
+    }
+   }
+  ],
+  [
+   "dt1",
+   1,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5064,
+     "throughput_items_per_unit": 1.3326315789473684,
+     "mean_cycle_time": 55.26981462678936,
+     "max_cycle_time": 74.13043121565443,
+     "mean_machine_utilisation_pct": 62.21328534662246,
+     "mean_machine_blocked_pct": 0.0026719263479552816,
+     "mean_queue_occupancy_items": 11.486384121200738,
+     "total_energy_MJ": 1709.2994516976216,
+     "energy_per_item_kJ": 337.5393861962128,
+     "mean_plant_power_kW": 449.81564518358465
+    }
+   }
+  ],
+  [
+   "ref",
+   2,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5262.0,
+     "throughput_items_per_unit": 1.3155,
+     "mean_cycle_time": 50.68876058452555,
+     "max_cycle_time": 74.17554656522475,
+     "mean_machine_utilisation_pct": 55.913329276696174,
+     "mean_machine_blocked_pct": 0.002412555174635308,
+     "mean_queue_occupancy_items": 11.19493296954546,
+     "total_energy_MJ": 1633.3924604432934,
+     "energy_per_item_kJ": 310.4128583130546,
+     "mean_plant_power_kW": 408.34811511082336
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5067,
+     "throughput_items_per_unit": 1.3334210526315788,
+     "mean_cycle_time": 55.418675130199134,
+     "max_cycle_time": 78.25310059540698,
+     "mean_machine_utilisation_pct": 62.175762900322326,
+     "mean_machine_blocked_pct": 0.0038591576542502913,
+     "mean_queue_occupancy_items": 11.721277792834613,
+     "total_energy_MJ": 1708.4103214407176,
+     "energy_per_item_kJ": 337.16406580633856,
+     "mean_plant_power_kW": 449.5816635370309
+    }
+   }
+  ],
+  [
+   "dt0",
+   2,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5263.0,
+     "throughput_items_per_unit": 1.31575,
+     "mean_cycle_time": 50.24990110454851,
+     "max_cycle_time": 72.71301334591726,
+     "mean_machine_utilisation_pct": 55.797376992454886,
+     "mean_machine_blocked_pct": 0.0026326578378214334,
+     "mean_queue_occupancy_items": 10.739488556921364,
+     "total_energy_MJ": 1630.5039734950337,
+     "energy_per_item_kJ": 309.80504911552987,
+     "mean_plant_power_kW": 407.62599337375843
+    }
+   }
+  ],
+  [
+   "dt1",
+   2,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5068,
+     "throughput_items_per_unit": 1.3336842105263158,
+     "mean_cycle_time": 55.49152540525656,
+     "max_cycle_time": 76.81866396271653,
+     "mean_machine_utilisation_pct": 62.27391283551434,
+     "mean_machine_blocked_pct": 0.0007441463589513756,
+     "mean_queue_occupancy_items": 11.718777094029104,
+     "total_energy_MJ": 1710.7833787460804,
+     "energy_per_item_kJ": 337.56578112590375,
+     "mean_plant_power_kW": 450.20615230160007
+    }
+   }
+  ],
+  [
+   "ref",
+   3,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5266.0,
+     "throughput_items_per_unit": 1.3165,
+     "mean_cycle_time": 50.824849987313776,
+     "max_cycle_time": 71.88750122518468,
+     "mean_machine_utilisation_pct": 56.069293434788,
+     "mean_machine_blocked_pct": 0.000764416169532808,
+     "mean_queue_occupancy_items": 11.231156055146043,
+     "total_energy_MJ": 1636.7607633704083,
+     "energy_per_item_kJ": 310.81670402020666,
+     "mean_plant_power_kW": 409.1901908426021
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5062,
+     "throughput_items_per_unit": 1.3321052631578947,
+     "mean_cycle_time": 55.501225415220006,
+     "max_cycle_time": 74.49787830247806,
+     "mean_machine_utilisation_pct": 62.31323506529088,
+     "mean_machine_blocked_pct": 0.002255387895693993,
+     "mean_queue_occupancy_items": 11.671844349588872,
+     "total_energy_MJ": 1711.58684092595,
+     "energy_per_item_kJ": 338.12462286170484,
+     "mean_plant_power_kW": 450.4175897173552
+    }
+   }
+  ],
+  [
+   "dt0",
+   3,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5264.0,
+     "throughput_items_per_unit": 1.316,
+     "mean_cycle_time": 50.424067054482656,
+     "max_cycle_time": 66.29251841103496,
+     "mean_machine_utilisation_pct": 55.97668453379073,
+     "mean_machine_blocked_pct": 0.0016045675134703857,
+     "mean_queue_occupancy_items": 10.78263676128798,
+     "total_energy_MJ": 1635.086549434436,
+     "energy_per_item_kJ": 310.6167457132287,
+     "mean_plant_power_kW": 408.7716373586089
+    }
+   }
+  ],
+  [
+   "dt1",
+   3,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5065,
+     "throughput_items_per_unit": 1.3328947368421054,
+     "mean_cycle_time": 55.449914349606814,
+     "max_cycle_time": 72.81168709228132,
+     "mean_machine_utilisation_pct": 62.228968806930446,
+     "mean_machine_blocked_pct": 0.001330577062843938,
+     "mean_queue_occupancy_items": 11.695866912775935,
+     "total_energy_MJ": 1709.9946577324004,
+     "energy_per_item_kJ": 337.6100015266339,
+     "mean_plant_power_kW": 449.99859414010535
+    }
+   }
+  ],
+  [
+   "ref",
+   4,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5261.0,
+     "throughput_items_per_unit": 1.31525,
+     "mean_cycle_time": 50.76836322500207,
+     "max_cycle_time": 71.07355925141133,
+     "mean_machine_utilisation_pct": 56.05998215318982,
+     "mean_machine_blocked_pct": 0.004797263633051472,
+     "mean_queue_occupancy_items": 11.149749006875927,
+     "total_energy_MJ": 1636.896920359357,
+     "energy_per_item_kJ": 311.13798144066845,
+     "mean_plant_power_kW": 409.2242300898392
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5059,
+     "throughput_items_per_unit": 1.3313157894736842,
+     "mean_cycle_time": 55.786305253659584,
+     "max_cycle_time": 77.23980147651673,
+     "mean_machine_utilisation_pct": 62.43796154679893,
+     "mean_machine_blocked_pct": 0.00584656879289684,
+     "mean_queue_occupancy_items": 11.935930594140672,
+     "total_energy_MJ": 1713.7568211739451,
+     "energy_per_item_kJ": 338.7540662530036,
+     "mean_plant_power_kW": 450.98863715103823
+    }
+   }
+  ],
+  [
+   "dt0",
+   4,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5264.0,
+     "throughput_items_per_unit": 1.316,
+     "mean_cycle_time": 50.63569661782877,
+     "max_cycle_time": 74.59288462050193,
+     "mean_machine_utilisation_pct": 55.99265639284621,
+     "mean_machine_blocked_pct": 0.003352952316076603,
+     "mean_queue_occupancy_items": 11.045191506187631,
+     "total_energy_MJ": 1635.3673937501392,
+     "energy_per_item_kJ": 310.670097596911,
+     "mean_plant_power_kW": 408.8418484375348
+    }
+   }
+  ],
+  [
+   "dt1",
+   4,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5064,
+     "throughput_items_per_unit": 1.3326315789473684,
+     "mean_cycle_time": 55.63628206639191,
+     "max_cycle_time": 76.06101721620962,
+     "mean_machine_utilisation_pct": 62.3842511667291,
+     "mean_machine_blocked_pct": 0.0032413994591644567,
+     "mean_queue_occupancy_items": 11.7995540217693,
+     "total_energy_MJ": 1713.190972948141,
+     "energy_per_item_kJ": 338.3078540576898,
+     "mean_plant_power_kW": 450.83972972319503
+    }
+   }
+  ],
+  [
+   "ref",
+   5,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5267.0,
+     "throughput_items_per_unit": 1.31675,
+     "mean_cycle_time": 50.54265989390902,
+     "max_cycle_time": 71.52587528964159,
+     "mean_machine_utilisation_pct": 55.94206022915525,
+     "mean_machine_blocked_pct": 0.006494914512504692,
+     "mean_queue_occupancy_items": 10.975727731397228,
+     "total_energy_MJ": 1634.003353762774,
+     "energy_per_item_kJ": 310.2341662735474,
+     "mean_plant_power_kW": 408.5008384406935
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5065,
+     "throughput_items_per_unit": 1.3328947368421054,
+     "mean_cycle_time": 55.73052194816995,
+     "max_cycle_time": 78.73591446332648,
+     "mean_machine_utilisation_pct": 62.304211400821366,
+     "mean_machine_blocked_pct": 0.004582882096017927,
+     "mean_queue_occupancy_items": 11.992352692535546,
+     "total_energy_MJ": 1710.9017078440133,
+     "energy_per_item_kJ": 337.789083483517,
+     "mean_plant_power_kW": 450.23729153789833
+    }
+   }
+  ],
+  [
+   "dt0",
+   5,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5266.0,
+     "throughput_items_per_unit": 1.3165,
+     "mean_cycle_time": 50.43614657172724,
+     "max_cycle_time": 69.26767173164899,
+     "mean_machine_utilisation_pct": 55.92374965364034,
+     "mean_machine_blocked_pct": 0.00245673077806574,
+     "mean_queue_occupancy_items": 10.85790911853905,
+     "total_energy_MJ": 1634.1727610066714,
+     "energy_per_item_kJ": 310.3252489568309,
+     "mean_plant_power_kW": 408.54319025166785
+    }
+   }
+  ],
+  [
+   "dt1",
+   5,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5067,
+     "throughput_items_per_unit": 1.3334210526315788,
+     "mean_cycle_time": 55.50247161286773,
+     "max_cycle_time": 76.08259740128597,
+     "mean_machine_utilisation_pct": 62.251550341934966,
+     "mean_machine_blocked_pct": 0.0026081436173135924,
+     "mean_queue_occupancy_items": 11.729476552207004,
+     "total_energy_MJ": 1710.2656335866582,
+     "energy_per_item_kJ": 337.5302217459361,
+     "mean_plant_power_kW": 450.0699035754364
+    }
+   }
+  ],
+  [
+   "ref",
+   6,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5265.0,
+     "throughput_items_per_unit": 1.31625,
+     "mean_cycle_time": 50.43004238814567,
+     "max_cycle_time": 68.66241148406789,
+     "mean_machine_utilisation_pct": 55.99578276508706,
+     "mean_machine_blocked_pct": 0.0023427027646832385,
+     "mean_queue_occupancy_items": 10.775970643907527,
+     "total_energy_MJ": 1635.3645019752782,
+     "energy_per_item_kJ": 310.61054168571286,
+     "mean_plant_power_kW": 408.84112549381956
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5069,
+     "throughput_items_per_unit": 1.3339473684210525,
+     "mean_cycle_time": 55.56420315073901,
+     "max_cycle_time": 72.32559774231231,
+     "mean_machine_utilisation_pct": 62.3491202523716,
+     "mean_machine_blocked_pct": 0.002093261509477854,
+     "mean_queue_occupancy_items": 11.734825550746477,
+     "total_energy_MJ": 1711.997017586876,
+     "energy_per_item_kJ": 337.7386106898552,
+     "mean_plant_power_kW": 450.5255309439147
+    }
+   }
+  ],
+  [
+   "dt0",
+   6,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5265.0,
+     "throughput_items_per_unit": 1.31625,
+     "mean_cycle_time": 50.465719260283116,
+     "max_cycle_time": 69.40525859095567,
+     "mean_machine_utilisation_pct": 55.82711183723019,
+     "mean_machine_blocked_pct": 0.00510811407498997,
+     "mean_queue_occupancy_items": 10.99461656273131,
+     "total_energy_MJ": 1631.8349710371342,
+     "energy_per_item_kJ": 309.9401654391518,
+     "mean_plant_power_kW": 407.9587427592835
+    }
+   }
+  ],
+  [
+   "dt1",
+   6,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5067,
+     "throughput_items_per_unit": 1.3334210526315788,
+     "mean_cycle_time": 55.19388061264197,
+     "max_cycle_time": 77.41539803232718,
+     "mean_machine_utilisation_pct": 62.12831638297007,
+     "mean_machine_blocked_pct": 0.00454326794367166,
+     "mean_queue_occupancy_items": 11.461515413496478,
+     "total_energy_MJ": 1707.859440196339,
+     "energy_per_item_kJ": 337.0553463975407,
+     "mean_plant_power_kW": 449.43669478851024
+    }
+   }
+  ],
+  [
+   "ref",
+   7,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5266.0,
+     "throughput_items_per_unit": 1.3165,
+     "mean_cycle_time": 50.77405437034167,
+     "max_cycle_time": 75.10319395949637,
+     "mean_machine_utilisation_pct": 56.03303614588295,
+     "mean_machine_blocked_pct": 0.006588372505093456,
+     "mean_queue_occupancy_items": 11.182557010433946,
+     "total_energy_MJ": 1635.6323370352027,
+     "energy_per_item_kJ": 310.602418730574,
+     "mean_plant_power_kW": 408.90808425880067
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5064,
+     "throughput_items_per_unit": 1.3326315789473684,
+     "mean_cycle_time": 55.55940183411603,
+     "max_cycle_time": 74.40030934130846,
+     "mean_machine_utilisation_pct": 62.3270477731946,
+     "mean_machine_blocked_pct": 0.0026970918322881754,
+     "mean_queue_occupancy_items": 11.749861997370923,
+     "total_energy_MJ": 1711.3775267775059,
+     "energy_per_item_kJ": 337.94974857375706,
+     "mean_plant_power_kW": 450.3625070467121
+    }
+   }
+  ],
+  [
+   "dt0",
+   7,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5265.0,
+     "throughput_items_per_unit": 1.31625,
+     "mean_cycle_time": 50.198280922152215,
+     "max_cycle_time": 69.68385974120042,
+     "mean_machine_utilisation_pct": 55.840856832205766,
+     "mean_machine_blocked_pct": 0.001775166720930514,
+     "mean_queue_occupancy_items": 10.632604166981334,
+     "total_energy_MJ": 1631.6617364105084,
+     "energy_per_item_kJ": 309.90726237616497,
+     "mean_plant_power_kW": 407.9154341026271
+    }
+   }
+  ],
+  [
+   "dt1",
+   7,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5073,
+     "throughput_items_per_unit": 1.335,
+     "mean_cycle_time": 55.52832224107241,
+     "max_cycle_time": 77.54405295945435,
+     "mean_machine_utilisation_pct": 62.304100349431586,
+     "mean_machine_blocked_pct": 0.004719996577580931,
+     "mean_queue_occupancy_items": 11.740179028414333,
+     "total_energy_MJ": 1711.6946662867012,
+     "energy_per_item_kJ": 337.41270772456164,
+     "mean_plant_power_kW": 450.4459648122898
+    }
+   }
+  ],
+  [
+   "ref",
+   8,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5263.0,
+     "throughput_items_per_unit": 1.31575,
+     "mean_cycle_time": 50.50656160390544,
+     "max_cycle_time": 70.95773650987485,
+     "mean_machine_utilisation_pct": 55.93462089169708,
+     "mean_machine_blocked_pct": 0.003049747641478817,
+     "mean_queue_occupancy_items": 10.940045187122807,
+     "total_energy_MJ": 1633.4667203517588,
+     "energy_per_item_kJ": 310.36798790647134,
+     "mean_plant_power_kW": 408.36668008793964
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5068,
+     "throughput_items_per_unit": 1.3336842105263158,
+     "mean_cycle_time": 55.75912655949916,
+     "max_cycle_time": 83.19421329680154,
+     "mean_machine_utilisation_pct": 62.42987620347091,
+     "mean_machine_blocked_pct": 0.009981415947102648,
+     "mean_queue_occupancy_items": 11.910797195278313,
+     "total_energy_MJ": 1714.4909207439675,
+     "energy_per_item_kJ": 338.2973403204356,
+     "mean_plant_power_kW": 451.18182124841246
+    }
+   }
+  ],
+  [
+   "dt0",
+   8,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5267.0,
+     "throughput_items_per_unit": 1.31675,
+     "mean_cycle_time": 50.48863926964235,
+     "max_cycle_time": 74.1666390435513,
+     "mean_machine_utilisation_pct": 55.94827445783806,
+     "mean_machine_blocked_pct": 0.0026275379909368153,
+     "mean_queue_occupancy_items": 10.903378860153568,
+     "total_energy_MJ": 1634.1434928001768,
+     "energy_per_item_kJ": 310.2607732675483,
+     "mean_plant_power_kW": 408.5358732000442
+    }
+   }
+  ],
+  [
+   "dt1",
+   8,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5067,
+     "throughput_items_per_unit": 1.3334210526315788,
+     "mean_cycle_time": 55.55956324843579,
+     "max_cycle_time": 76.26576752737037,
+     "mean_machine_utilisation_pct": 62.221319878790034,
+     "mean_machine_blocked_pct": 0.0074096156625754655,
+     "mean_queue_occupancy_items": 11.831942654894084,
+     "total_energy_MJ": 1709.5518774448133,
+     "energy_per_item_kJ": 337.3893580905493,
+     "mean_plant_power_kW": 449.88207301179295
+    }
+   }
+  ],
+  [
+   "ref",
+   9,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5266.0,
+     "throughput_items_per_unit": 1.3165,
+     "mean_cycle_time": 50.55993430294385,
+     "max_cycle_time": 69.74102607523855,
+     "mean_machine_utilisation_pct": 55.948109318358384,
+     "mean_machine_blocked_pct": 0.0024585916859063486,
+     "mean_queue_occupancy_items": 10.99261120818436,
+     "total_energy_MJ": 1634.5829367567665,
+     "energy_per_item_kJ": 310.4031402880301,
+     "mean_plant_power_kW": 408.64573418919167
+    },
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5069,
+     "throughput_items_per_unit": 1.3339473684210525,
+     "mean_cycle_time": 55.72009388604613,
+     "max_cycle_time": 76.59705596930507,
+     "mean_machine_utilisation_pct": 62.38123194472433,
+     "mean_machine_blocked_pct": 0.00455785276231884,
+     "mean_queue_occupancy_items": 11.90788926962215,
+     "total_energy_MJ": 1713.3192115201637,
+     "energy_per_item_kJ": 337.99944989547515,
+     "mean_plant_power_kW": 450.8734767158326
+    }
+   }
+  ],
+  [
+   "dt0",
+   9,
+   {
+    "A": {
+     "window": "A",
+     "from": 0.0,
+     "to": 4000.0,
+     "items_produced": 5268.0,
+     "throughput_items_per_unit": 1.317,
+     "mean_cycle_time": 50.10478367385199,
+     "max_cycle_time": 75.50290345948406,
+     "mean_machine_utilisation_pct": 55.684102504479625,
+     "mean_machine_blocked_pct": 0.002935396905964922,
+     "mean_queue_occupancy_items": 10.660225932259909,
+     "total_energy_MJ": 1627.937223898596,
+     "energy_per_item_kJ": 309.0237706717152,
+     "mean_plant_power_kW": 406.984305974649
+    }
+   }
+  ],
+  [
+   "dt1",
+   9,
+   {
+    "B": {
+     "window": "B",
+     "from": 4200.0,
+     "to": 8000.0,
+     "items_produced": 5067,
+     "throughput_items_per_unit": 1.3334210526315788,
+     "mean_cycle_time": 55.24020870788,
+     "max_cycle_time": 77.29931617300917,
+     "mean_machine_utilisation_pct": 62.12196806592131,
+     "mean_machine_blocked_pct": 0.0012895258240017652,
+     "mean_queue_occupancy_items": 11.525503342413556,
+     "total_energy_MJ": 1707.2269765512133,
+     "energy_per_item_kJ": 336.9305262583804,
+     "mean_plant_power_kW": 449.2702569871614
+    }
+   }
+  ]
+ ],
+ "stale": [
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5069,
+   "throughput_items_per_unit": 1.3339473684210525,
+   "mean_cycle_time": 50.31056020892084,
+   "max_cycle_time": 67.3227306385852,
+   "mean_machine_utilisation_pct": 56.18753319272492,
+   "mean_machine_blocked_pct": 0.002310187718017244,
+   "mean_queue_occupancy_items": 10.895534532554729,
+   "total_energy_MJ": 1557.8115246742482,
+   "energy_per_item_kJ": 307.3212713896722,
+   "mean_plant_power_kW": 409.9504012300653
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5063,
+   "throughput_items_per_unit": 1.3323684210526316,
+   "mean_cycle_time": 50.49892012231805,
+   "max_cycle_time": 75.78116170457633,
+   "mean_machine_utilisation_pct": 56.32650781389357,
+   "mean_machine_blocked_pct": 0.0036060036300647738,
+   "mean_queue_occupancy_items": 10.990910946811816,
+   "total_energy_MJ": 1561.2200634140963,
+   "energy_per_item_kJ": 308.3586931491401,
+   "mean_plant_power_kW": 410.84738510897273
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5067,
+   "throughput_items_per_unit": 1.3334210526315788,
+   "mean_cycle_time": 50.53131123423571,
+   "max_cycle_time": 69.21527172911647,
+   "mean_machine_utilisation_pct": 56.27357760949423,
+   "mean_machine_blocked_pct": 0.0024431619651922552,
+   "mean_queue_occupancy_items": 11.09479639562602,
+   "total_energy_MJ": 1560.2053299000563,
+   "energy_per_item_kJ": 307.9150049141615,
+   "mean_plant_power_kW": 410.580349973699
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5066,
+   "throughput_items_per_unit": 1.333157894736842,
+   "mean_cycle_time": 50.44274741212093,
+   "max_cycle_time": 75.95521135891249,
+   "mean_machine_utilisation_pct": 56.26323429939829,
+   "mean_machine_blocked_pct": 0.0067776744530551455,
+   "mean_queue_occupancy_items": 10.992041904055242,
+   "total_energy_MJ": 1560.0230678783516,
+   "energy_per_item_kJ": 307.9398081086363,
+   "mean_plant_power_kW": 410.53238628377676
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5061,
+   "throughput_items_per_unit": 1.331842105263158,
+   "mean_cycle_time": 50.47695529885581,
+   "max_cycle_time": 70.62642451700594,
+   "mean_machine_utilisation_pct": 56.296973665387604,
+   "mean_machine_blocked_pct": 0.0014306424444607488,
+   "mean_queue_occupancy_items": 11.002500119308571,
+   "total_energy_MJ": 1560.4570628224099,
+   "energy_per_item_kJ": 308.32978913701044,
+   "mean_plant_power_kW": 410.64659547958155
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5068,
+   "throughput_items_per_unit": 1.3336842105263158,
+   "mean_cycle_time": 50.51492674753655,
+   "max_cycle_time": 72.34432594604732,
+   "mean_machine_utilisation_pct": 56.40353477107676,
+   "mean_machine_blocked_pct": 0.005473679699449157,
+   "mean_queue_occupancy_items": 10.943126088748064,
+   "total_energy_MJ": 1562.9464618508027,
+   "energy_per_item_kJ": 308.3951187550913,
+   "mean_plant_power_kW": 411.3017004870533
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5065,
+   "throughput_items_per_unit": 1.3328947368421054,
+   "mean_cycle_time": 50.45154147579205,
+   "max_cycle_time": 78.38632077027705,
+   "mean_machine_utilisation_pct": 56.26908277412695,
+   "mean_machine_blocked_pct": 0.004954763330186228,
+   "mean_queue_occupancy_items": 10.989358033139403,
+   "total_energy_MJ": 1560.139791301098,
+   "energy_per_item_kJ": 308.02365079982195,
+   "mean_plant_power_kW": 410.56310297397323
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5069,
+   "throughput_items_per_unit": 1.3339473684210525,
+   "mean_cycle_time": 50.42690233675781,
+   "max_cycle_time": 68.54395517185822,
+   "mean_machine_utilisation_pct": 56.272590089795514,
+   "mean_machine_blocked_pct": 0.0013419140502384452,
+   "mean_queue_occupancy_items": 10.964367594674739,
+   "total_energy_MJ": 1560.1305131797085,
+   "energy_per_item_kJ": 307.77875580582133,
+   "mean_plant_power_kW": 410.5606613630812
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5063,
+   "throughput_items_per_unit": 1.3323684210526316,
+   "mean_cycle_time": 50.258278709801814,
+   "max_cycle_time": 69.50578361738735,
+   "mean_machine_utilisation_pct": 56.16930687083181,
+   "mean_machine_blocked_pct": 0.004130518104275325,
+   "mean_queue_occupancy_items": 10.834150688914677,
+   "total_energy_MJ": 1557.2240896310495,
+   "energy_per_item_kJ": 307.5694429451016,
+   "mean_plant_power_kW": 409.7958130608025
+  },
+  {
+   "window": "B",
+   "from": 4200.0,
+   "to": 8000.0,
+   "items_produced": 5068,
+   "throughput_items_per_unit": 1.3336842105263158,
+   "mean_cycle_time": 50.40932604607718,
+   "max_cycle_time": 73.51216172566546,
+   "mean_machine_utilisation_pct": 56.313897376115264,
+   "mean_machine_blocked_pct": 0.0072252932197278295,
+   "mean_queue_occupancy_items": 10.893214811033701,
+   "total_energy_MJ": 1561.4103331006795,
+   "energy_per_item_kJ": 308.09201521323587,
+   "mean_plant_power_kW": 410.8974560791262
+  }
+ ]
+}
