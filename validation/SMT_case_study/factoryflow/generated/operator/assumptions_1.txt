@@ -1,0 +1,11 @@
+1. Node and edge names and types are chosen according to the user's description where specified.
+2. The board supply (`source_1`), described as stacks of sixteen with a new stack always ready, is modeled using a `BatchSource` node. To ensure boards never run out, its `inter_arrival_time` is set to 0.
+3. The `work_capacity` for `line_loader`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is assumed to be one board, as they are described as handling boards individually.
+4. The `buffering_module`, which "just passes them straight through", is modeled as a `Machine` with a `processing_delay` of 0.
+5. The `screen_printer`'s autonomous cleaning cycle is modeled as an internal machine process that blocks the machine for 28 seconds after every two boards are completed. This is distinct from the operator-serviced top-up.
+6. The top-up of solder and adhesive for the `screen_printer` is modeled as a single service task named "top_up".
+7. The `reflow_oven` is modeled as a `PowerCycledMachine` that powers down when idle (`power_down_when_idle=True`), based on the description of a warm-up time from cold and distinct power states for "switched off", "heating up", and "at temperature".
+8. The simulation starts with the `reflow_oven` in a cold state, requiring an initial one-hour warm-up before it can accept any boards.
+9. The `operator_1` is assumed to service requests from machines in a First-In, First-Out (FIFO) order.
+10. All machines, buffers, and belts are assumed to be empty at the start of the simulation.
+11. The various machine node types are assumed to support power consumption tracking for their different operational states (e.g., idle, processing, cleaning) as specified in the description.

@@ -1,0 +1,7 @@
+1. The source (`source_1`) provides a new stack of boards the instant the previous one is consumed, as the description states "we never run out of boards" and "we always have the next stack ready". This is modeled by setting the `inter_arrival_time` between stacks to zero.
+2. The screen printer's (`screen_printer`) autonomous 28-second cleaning cycle after every second board is modeled as a custom machine state. After processing two boards, the machine will become unavailable for 28 seconds before it can accept the next board.
+3. The operator (`operator_1`) services requests from machines in a First-In, First-Out (FIFO) order when multiple machines require attention simultaneously.
+4. The reflow oven (`reflow_oven`) performs its one-hour warm-up at the start of the simulation and then remains at operating temperature for the entire run, even if it becomes idle.
+5. The service tasks performed by the operator require unique names for assignment. The top-up for the screen printer will be named "top_up", the reel change for `pick_and_place_1` will be "reel_change_pp1", and the reel change for `pick_and_place_2` will be "reel_change_pp2".
+6. The buffering module (`buffering_module`), which "just passes them straight through", is modeled as a machine with a processing delay of zero.
+7. Default values from the simulation framework will be used for any other component parameters not specified in the description.

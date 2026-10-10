@@ -1,0 +1,5 @@
+1. The `reflow_oven` is modeled as a `PowerCycledMachine` to implement the specified `node_setup_time` of 3600. It is assumed to not power down when idle, as the description states it maintains temperature whether occupied or not.
+2. The `screen_printer`'s "28 cleaning cycle after every 2nd board" is modeled as an automatic service with a task name "cleaning", an interval of 2, and a duration of 28. This service is assumed to not require the `HumanOperator`.
+3. The power consumption values for specific states (e.g., "printing", "cleaning", "warm-up") are mapped to the corresponding internal states of the simulation components for energy calculation.
+4. The power consumption for the `buffering_module` is assumed to be a constant 250W, regardless of its internal simulation state.
+5. Default values are used for any component parameters not specified in the description, such as `work_capacity` (defaulting to 1, except for the reflow oven) and edge selection policies.

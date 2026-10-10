@@ -1,0 +1,147 @@
+\subsection{Case Study: A Published SMT Assembly Line}
+\label{subsec:smt_case_study}
+
+The preceding subsections evaluated FactoryFlow against reference systems constructed for
+this work. This case study evaluates it against a published system, so that the structure,
+the parameters and the reported KPIs all originate outside this paper.
+
+\noindent\textbf{The system.} The case system is an automated Surface Mount Technology
+(SMT) printed circuit board assembly line operating at a manufacturing facility in Mysuru,
+India, and composed of legacy machines \cite{KaranjkarSMT2018}. It was instrumented with
+energy meters, vibration sensors and infrared proximity sensors, and machine states and
+state-wise power draw were inferred from three months of recorded data. Boards arrive in
+stacks of sixteen and pass through five machines in sequence: a line loader, a screen
+printer, two pick-and-place machines and a reflow oven, linked by single-board transfer
+positions and two non-accumulating conveyor belts. One human operator serves the whole
+line, refilling the printer's consumables and replacing component reels on the placement
+machines. The published study provides both the model and its result files, so the
+parameters are exact rather than transcribed from a summary. Its reported values are
+outputs of that model: the study states agreement with the real line in prose but does not
+publish the measured values, so the comparisons below are against a published reference
+model of a real line rather than against measured factory throughput.
+
+\noindent\textbf{Experimental methodology.} A description of the line was supplied to the
+FactoryFlow model generator, which produced an executable FactorySimPy model. The
+generated model was executed unmodified to the same terminating condition as the
+reference, namely until 1024 boards had been completed, and its KPIs were compared with
+the published values. Because model generation is not deterministic, candidates were
+generated repeatedly, and at two levels of description detail: a dense specification
+naming components and parameters directly, in the style used in
+Section~\ref{sec:design_principles}, and a plain-language account of the line of the kind
+a production engineer would give, naming only component identifiers.
+
+\noindent\textbf{Model size and parameters.} The line comprises eight flow nodes, one
+operator and seven edges: a source, five machines, a pass-through module and a sink,
+connected by five single-board transfer positions and two conveyor belts. Its behaviour is
+governed by five processing delays, one cleaning delay and the interval at which cleaning
+occurs, three service intervals and the operator task duration, two belt parameters, three
+oven parameters and the stack size. Five of these are processing delays obtainable from
+telemetry; the remainder are structural or configuration attributes taken from the
+description.
+
+Two components exercise capabilities beyond a machine with a processing delay. The refills
+and reel changes are performed by a single shared operator, so a machine whose service
+falls due stalls until the operator is free; the operator is a resource that machines
+contend for rather than an additional delay folded into processing time. The reflow oven
+holds ten boards simultaneously and must reach temperature before it accepts any board,
+and is expressed through component capacity and setup time rather than as a chain of
+stages.
+
+\noindent\textbf{Structural agreement.} Every generated candidate was compared with the
+reference graph by component identifier, component type and the endpoints of each edge.
+From the plain-language description, all candidates reproduced the reference graph exactly:
+the same nine nodes, the same seven edges and the same endpoints, including the
+recognition that boards arriving in stacks require a batch-releasing source rather than a
+per-item one. Structure was therefore recovered reliably from an engineer's account of the
+line, without component or connection errors.
+
+\noindent\textbf{KPI agreement.} The generated model reproduces the published line,
+matching its reported throughput, maximum cycle time, energy per board and reflow-oven
+warm-up fraction to within 0.01\%. Table~\ref{tab:smt_baseline} gives the comparison.
+
+\begin{table}[!t]
+\centering
+\caption{SMT line: generated digital twin against the published reference model.}
+\label{tab:smt_baseline}
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+KPI & Published & Generated DT & Difference \\
+\midrule
+Throughput (boards/h)      & 40.3549 & 40.3547 & $-0.00\%$ \\
+Maximum cycle time (h)     & 1.6193  & 1.6194  & $+0.01\%$ \\
+Energy per board (kJ)      & 2427.29 & 2427.65 & $+0.01\%$ \\
+Oven warm-up fraction (\%) & 3.9409  & 3.9409  & $-0.00\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All four KPIs agree to within 0.01\%. Energy follows from the per-state power ratings the
+generated model declares on its components together with the time each component spends in
+each state, so it is an output of the generated model rather than a separate calculation.
+The operator was occupied for 3.94\% of the run and no service request queued, so operator
+contention does not affect this configuration; this is measured rather than assumed, and
+would not have been visible had the service time been folded into the processing delays.
+
+Mean cycle time is excluded because it is not comparable. The reference creates a stack of
+sixteen boards and timestamps all sixteen at the instant the stack is created, so a board
+accumulates waiting time before it enters the line. Instrumenting per-board residence
+times shows that the time spent inside components is identical across configurations and
+that the entire difference lies in that pre-line interval. The maximum cycle time, which
+is set by the initial oven warm-up and is therefore unaffected by the convention, agrees
+to 0.01\%.
+
+\noindent\textbf{Description detail and assumption review.} The two description levels
+differ in what they determine. Structure was recovered from both. Behaviour was not always:
+the plain-language account states that the oven must reach temperature before it accepts
+boards, and gives a power rating for the oven when switched off, but does not say whether
+the oven ever switches off in normal operation. One candidate resolved that in favour of a
+unit that powers down whenever it falls idle, and so incurred a warm-up per batch rather
+than one at startup.
+
+That divergence was visible before the model was run. The generator records the
+assumptions it made alongside the model it produced, and this one was recorded explicitly,
+together with the reasoning that the description's mention of an off-state power rating
+implied a unit that switches off. Presented with that assumption, an expert familiar with
+the line corrects it directly, and the revised description or assumption set yields a
+model with the intended behaviour. This is the acceptance and revision mechanism of
+Stage~C rather than a failure of generation: ambiguity in the description is surfaced as a
+stated assumption for confirmation instead of being silently resolved. The dense
+specification, which names the warm-up as a component parameter, leaves no such latitude
+and required no revision.
+
+Plain language therefore determined the structure of this line reliably but
+underdetermined its behaviour, which is consistent with the division of labour the
+framework assumes: structural inference from a description, parameter values from
+telemetry, and expert confirmation of the assumptions that remain.
+
+\noindent\textbf{Structural change.} The published study also evaluates a structural
+modification. A buffering module is inserted between the placement machines and the reflow
+oven so that boards accumulate while the oven is switched off and then pass through it in
+a batch. Because the oven holds temperature at 25.8\,kW while idle but draws only 320\,W
+when off, the modification trades a warm-up before each batch, and boards waiting in the
+buffer, against a reduction in energy.
+
+Expressing this change required no new component behaviour: the accumulating stage becomes
+a buffer that withholds boards while filling and closes its entry until it has completely
+drained, and the oven becomes a component that switches off when idle and serves a warm-up
+computed from its cooling law. Both are parameter choices on existing components, so the
+modification is within the same generation path as the unmodified line. Reproducing the
+published energy figures for this configuration additionally requires the control policy
+that governs when the oven is commanded on relative to the filling of the buffer, which
+determines how much of the warm-up overlaps the accumulation phase. That policy is outside
+the scope of model generation, and the quantitative comparison for the modified line is
+therefore left to future work.
+
+\noindent\textbf{Limitations.} The comparison targets are the published model's reported
+values rather than measured factory KPIs, for the reason given above, and mean cycle time
+is not comparable because of the timestamping convention.
+
+Candidate generation is not deterministic, and the two kinds of deviation observed are
+handled differently. A deviation that follows from an ambiguity in the description appears
+as a stated assumption and is resolved by expert confirmation, as described above. A
+candidate may instead fail to execute because it uses a library interface that does not
+exist, such as an import of an absent module or a constructor argument a component does
+not accept. These are not resolvable by revising the description: they are caught by the
+execution check of Stage~C and handled by regeneration. Both were observed here, and
+neither produced a structurally incorrect model.

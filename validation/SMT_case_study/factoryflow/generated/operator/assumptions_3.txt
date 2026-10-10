@@ -1,0 +1,8 @@
+1.  The board feed `source_1` is modeled as a `BatchSource` with an `inter_arrival_time` of 0 to reflect that boards never run out, and its `blocking` parameter is set to `True`.
+2.  The `screen_printer`'s automatic 28-second cleaning cycle after every second board is modeled using a custom processing delay function, as this is a periodic machine process rather than an operator-based service.
+3.  The `reflow_oven` performs its one-hour heat-up cycle once at the start of the simulation and is assumed to remain at temperature, not powering down when idle.
+4.  The `buffering_module` is modeled as a `Machine` with a `processing_delay` of 0 seconds, as it "just passes them straight through".
+5.  The `travel_time` for the conveyor belts (`belt_sp_pp1` and `belt_bm_rfo`) is inferred to be 3 seconds, based on the description of having three positions and moving one position per second.
+6.  The single `operator_1` is assumed to service requests from machines in a First-In, First-Out (FIFO) order.
+7.  The `work_capacity` for the `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is assumed to be 1, as they are described as processing one board at a time.
+8.  The detailed power consumption figures for various machine states (e.g., idle, working, cleaning) are assumed to be tracked as statistics, as the base node types do not inherently include multi-state power modeling.

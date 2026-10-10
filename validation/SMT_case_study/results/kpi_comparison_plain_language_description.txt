@@ -1,0 +1,19 @@
+================================================================================================
+7 generated candidates, deviation from the published KPIs (%)
+================================================================================================
+candidate        nodes  buf belt conn  pwr   thrupt   maxcyc   energy   warmup
+------------------------------------------------------------------------------------------------
+operator\generated_1.py     9    5    2    7    5  -79.51%  289.71%  488.53% 2285.24%
+operator\generated_2.py     9    5    2    7    5   -0.00%   13.85%   -0.22%   -0.00%
+operator\generated_3.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+operator\generated_4.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+operator\generated_5.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.constants'
+operator\generated_6.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+operator\generated_7.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+------------------------------------------------------------------------------------------------
+executed unrepaired: 6/7
+  |throughput | deviation: min  0.00%  median  0.00%  max 79.51%
+  |max cycle  | deviation: min  0.01%  median  0.01%  max 289.71%
+  |energy     | deviation: min  0.01%  median  0.01%  max 488.53%
+  |warm-up    | deviation: min  0.00%  median  0.00%  max 2285.24%
+  operator\generated_5.py: ModuleNotFoundError: No module named 'factorysimpy.constants'

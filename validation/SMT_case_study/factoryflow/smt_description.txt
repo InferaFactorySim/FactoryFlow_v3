@@ -1,0 +1,70 @@
+=== DESCRIPTION: dense ===
+
+TOP (SystemModel) is an automated SMT-PCB assembly line: a single linear flow of 5 processing machines from a batch-fed source to a sink, with one shared human operator. TOP holds 1 BatchSource source_1 (batch_size=16, batches_ahead=1, inter_arrival_time=0, blocking=True; 16 boards are created at one instant sharing one creation timestamp and released one at a time, with one further stack prepared while the current one is fed), 1 Machine line_loader (processing_delay=2), 1 ServicedMachine screen_printer (processing_delay=18 per board plus a 28 cleaning cycle after every 2nd board; services=[solder_refill interval 100, adhesive_refill interval 100]), 1 ServicedMachine pick_and_place_1 (processing_delay=85, services=[reel_replacement interval 50]), 1 ServicedMachine pick_and_place_2 (processing_delay=50, services=[reel_replacement interval 50]), 1 Machine buffering_module (processing_delay=0, pass-through in this configuration), 1 Machine reflow_oven (work_capacity=10, processing_delay=50, node_setup_time=3600), 1 Sink sink_1, and 1 HumanOperator operator_1 (capacity=1; tasks solder_refill@screen_printer=60, adhesive_refill@screen_printer=60, reel_replacement@pick_and_place_1=60, reel_replacement@pick_and_place_2=60; a machine whose service falls due stalls until the operator is free and the task completes, requests queueing FIFO). 5 Buffers (capacity=1 each): b0 source_1->line_loader, b1 line_loader->screen_printer, b2 pick_and_place_1->pick_and_place_2, b3 pick_and_place_2->buffering_module, b4 reflow_oven->sink_1. 2 ConveyorBelts (capacity=3 slots, delay=1 per slot, non-accumulating so the whole belt stalls if the last slot is not collected): belt_sp_pp1 screen_printer->pick_and_place_1, belt_bm_rfo buffering_module->reflow_oven. Total: 1 source + 5 machines + 1 pass-through + 1 sink = 8 flow nodes plus 1 operator; 5 buffers + 2 belts = 7 edges. pick_and_place_1 at 85 is the bottleneck; the oven holds 10 boards at once for 50 each and must complete its 3600 warm-up before the first board. Power ratings in watts, by component state: screen_printer idle=100, waiting_for_refill=100, printing=500, cleaning=1000, waiting_to_output=100; pick_and_place_1 and pick_and_place_2 idle=100, waiting_for_reel_replacement=100, processing=500, waiting_to_output=100; buffering_module=250 in every state; reflow_oven off=320, warm-up=33000, temperature maintained=25800 whether occupied or not. line_loader, both conveyor belts and the transfer positions draw no power and are excluded from the energy total, which is therefore taken over the screen printer, both pick and place machines, the buffering module and the reflow oven.
+
+=== DESCRIPTION: operator ===
+
+This is our SMT line for assembling printed circuit boards. The boards come to the head
+of the line in stacks of sixteen. A whole stack is loaded at once and then the boards go
+into the line one at a time; we always have the next stack ready and waiting at the head
+while the current one is being fed, and we never run out of boards. Call the stack feed
+source_1.
+
+The first machine is the line loader, line_loader. It takes the boards off the stack one
+by one and puts them onto the line. It handles one board every two seconds.
+
+Next is the screen printer, screen_printer, which puts the solder paste onto the board.
+It does one board at a time and takes eighteen seconds each. After every second board it
+runs a cleaning cycle, which takes twenty-eight seconds; the machine does this by itself
+and nobody has to attend to it. It is filled with five hundred grams of solder and five
+hundred grams of adhesive, and each board uses five grams of each, so after a hundred
+boards an operator has to top up both. The solder and the adhesive are topped up as two
+separate jobs of sixty seconds each, and the printer is stopped while it waits.
+
+From the printer the boards travel to the first placement machine on a belt,
+belt_sp_pp1. The belt has three board positions on it and moves along by one position
+every second. It does not stack boards up: if the board at the far end is not picked off,
+the whole belt stops.
+
+The first placement machine, pick_and_place_1, fits the components onto the board from
+reels. It takes eighty-five seconds a board and it is the slowest thing on the line.
+Every fifty boards a reel has to be changed, which takes the operator sixty seconds, and
+the machine stands idle until that is done.
+
+The second placement machine, pick_and_place_2, does the rest of the components at fifty
+seconds a board, and it also needs a reel change every fifty boards, again sixty seconds.
+
+There is one operator on the line, operator_1, who does all the topping up and all the
+reel changes. They can only do one job at a time, so if a machine needs attention while
+they are busy on another, that machine has to wait its turn.
+
+After the second placement machine the boards pass the buffering module,
+buffering_module, which in this setup just passes them straight through, and then go on
+a second belt, belt_bm_rfo, the same as the first one: three positions, one second per
+position, and it stops if the end board is not taken off.
+
+Last is the reflow oven, reflow_oven. It is a heated chamber with a belt running through
+it, where the solder paste melts and makes the joints. Ten boards fit inside it at once
+and a board takes fifty seconds to pass through. The oven has to be brought up to
+temperature before it can take any boards at all, and from cold that takes an hour.
+
+Finished boards come off the oven and are collected at the end of the line; call the
+collection point sink_1.
+
+Between each machine there is a single board position where one board waits for the next
+machine to be free. Going down the line these are b0 between source_1 and the line loader, b1
+between the line loader and the printer, b2 between the two placement machines, b3
+between the second placement machine and the buffering module, and b4 between the oven
+and the collection point.
+
+For the electricity: the screen printer draws a hundred watts when it is sitting idle,
+waiting for a top-up, or waiting to pass a board on, five hundred watts while it is
+printing, and a thousand watts while it is cleaning. Each placement machine draws a
+hundred watts when idle, waiting for a reel change, or waiting to pass a board on, and
+five hundred watts while it is placing. The buffering module draws two hundred and fifty
+watts all the time. The oven draws three hundred and twenty watts when it is switched
+off, thirty-three thousand watts while it is heating up, and twenty-five thousand eight
+hundred watts once it is at temperature, whether or not there are boards inside. The line
+loader, the two belts and the single board positions use no electricity worth counting,
+so the energy figures cover only the printer, the two placement machines, the buffering
+module and the oven.

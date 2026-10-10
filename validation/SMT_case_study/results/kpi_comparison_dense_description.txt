@@ -1,0 +1,14 @@
+================================================================================================
+2 generated candidates, deviation from the published KPIs (%)
+================================================================================================
+candidate        nodes  buf belt conn  pwr   thrupt   maxcyc   energy   warmup
+------------------------------------------------------------------------------------------------
+dense\generated_1.py     9    5    2    7    5  FAILED: TypeError: Machine.__init__() got an unexpected keyword argument 'auto_services'
+dense\generated_2.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+------------------------------------------------------------------------------------------------
+executed unrepaired: 1/2
+  |throughput | deviation: min  0.00%  median  0.00%  max  0.00%
+  |max cycle  | deviation: min  0.01%  median  0.01%  max  0.01%
+  |energy     | deviation: min  0.01%  median  0.01%  max  0.01%
+  |warm-up    | deviation: min  0.00%  median  0.00%  max  0.00%
+  dense\generated_1.py: TypeError: Machine.__init__() got an unexpected keyword argument 'auto_services'

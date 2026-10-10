@@ -1,0 +1,8 @@
+1.  The board feed, `source_1`, is modeled as a `BatchSource` node. The time between new stacks becoming available is assumed to be zero to model the "never run out of boards" condition.
+2.  The `screen_printer`, `pick_and_place_1`, and `pick_and_place_2` are modeled as `ServicedMachine` nodes to handle their periodic service requirements.
+3.  The `reflow_oven` is modeled as a `PowerCycledMachine` to account for its initial warm-up time. It is assumed to start in a cold state and, once heated, does not power down when idle.
+4.  The `buffering_module` is modeled as a `Machine` node with a processing delay of zero seconds, as it "just passes them straight through".
+5.  The `operator_1` is modeled as a `HumanOperator` node. If multiple machines require service simultaneously, it is assumed the requests are handled in a First-In, First-Out (FIFO) order.
+6.  The autonomous cleaning cycle of the `screen_printer` is modeled as a service with an interval of 2 boards and a duration of 28 seconds.
+7.  The operator task for topping up the `screen_printer` is named "top_up". The operator task for changing reels on `pick_and_place_1` and `pick_and_place_2` is named "reel_change".
+8.  The simulation is assumed to start with all machines and buffers empty, and the operator idle.

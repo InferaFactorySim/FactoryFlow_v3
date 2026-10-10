@@ -1,0 +1,62 @@
+==============================================================================
+generated_1.py
+==============================================================================
+  could not build: TypeError: Machine.__init__() got an unexpected keyword argument 'auto_services'
+==============================================================================
+generated_2.py
+==============================================================================
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  equivalent substitution: reflow_oven: Machine -> PowerCycledMachine
+  DIFFERENCE: missing nodes: ['source_1']
+  DIFFERENCE: unexpected nodes: ['src']
+  DIFFERENCE: edge 'b0' wires src->line_loader, expected source_1->line_loader
+  structurally different
+==============================================================================
+generated_1.py
+==============================================================================
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  equivalent substitution: reflow_oven: Machine -> PowerCycledMachine
+  structurally identical to the reference
+==============================================================================
+generated_2.py
+==============================================================================
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  equivalent substitution: reflow_oven: Machine -> PowerCycledMachine
+  structurally identical to the reference
+==============================================================================
+generated_3.py
+==============================================================================
+  naming deviation: model class is 'SmtLine', the examples use 'SystemModel'
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  structurally identical to the reference
+==============================================================================
+generated_4.py
+==============================================================================
+  naming deviation: model class is 'SMTLine', the examples use 'SystemModel'
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  structurally identical to the reference
+==============================================================================
+generated_5.py
+==============================================================================
+  could not build: ModuleNotFoundError: No module named 'factorysimpy.constants'
+==============================================================================
+generated_6.py
+==============================================================================
+  naming deviation: model class is 'SMTLine', the examples use 'SystemModel'
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  structurally identical to the reference
+==============================================================================
+generated_7.py
+==============================================================================
+  naming deviation: model class is 'SMTLine', the examples use 'SystemModel'
+  reference : 9 nodes, 7 edges
+  candidate : 9 nodes, 7 edges
+  structurally identical to the reference
+==============================================================================
+structurally identical: 6/9

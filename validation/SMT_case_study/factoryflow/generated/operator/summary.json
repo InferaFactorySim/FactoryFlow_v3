@@ -1,0 +1,93 @@
+[
+  {
+    "run": 1,
+    "ok": true,
+    "seconds": 96.2,
+    "code_chars": 5206,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 2,
+    "ok": true,
+    "seconds": 104.5,
+    "code_chars": 5057,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 3,
+    "ok": true,
+    "seconds": 110.7,
+    "code_chars": 4618,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 4,
+    "ok": true,
+    "seconds": 124.8,
+    "code_chars": 4810,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 5,
+    "ok": true,
+    "seconds": 113.3,
+    "code_chars": 5388,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 6,
+    "ok": true,
+    "seconds": 113.5,
+    "code_chars": 5397,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 7,
+    "ok": true,
+    "seconds": 83.8,
+    "code_chars": 5839,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  }
+]
