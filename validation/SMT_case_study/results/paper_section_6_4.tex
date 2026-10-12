@@ -24,11 +24,10 @@ model of a real line rather than against measured factory throughput.
 FactoryFlow model generator, which produced an executable FactorySimPy model. The
 generated model was executed unmodified to the same terminating condition as the
 reference, namely until 1024 boards had been completed, and its KPIs were compared with
-the published values. Because model generation is not deterministic, candidates were
-generated repeatedly, and at two levels of description detail: a dense specification
-naming components and parameters directly, in the style used in
-Section~\ref{sec:design_principles}, and a plain-language account of the line of the kind
-a production engineer would give, naming only component identifiers.
+the published values. The system description is an account of the line of the kind a
+production engineer would give, naming the components and stating their timings and power
+draw. Because model generation is not deterministic, ten candidates were generated from
+the same system description.
 
 \noindent\textbf{Model size and parameters.} The line comprises eight flow nodes, one
 operator and seven edges: a source, five machines, a pass-through module and a sink,
@@ -49,24 +48,25 @@ stages.
 
 \noindent\textbf{Structural agreement.} Every generated candidate was compared with the
 reference graph by component identifier, component type and the endpoints of each edge.
-From the plain-language description, all candidates reproduced the reference graph exactly:
+Six of the ten candidates executed, and all six reproduced the reference graph exactly:
 the same nine nodes, the same seven edges and the same endpoints, including the
 recognition that boards arriving in stacks require a batch-releasing source rather than a
-per-item one. Structure was therefore recovered reliably from an engineer's account of the
-line, without component or connection errors.
+per-item one. Structure was therefore recovered reliably from the system description,
+without component or connection errors.
 
-\noindent\textbf{KPI agreement.} The generated model reproduces the published line,
-matching its reported throughput, maximum cycle time, energy per board and reflow-oven
-warm-up fraction to within 0.01\%. Table~\ref{tab:smt_baseline} gives the comparison.
+\noindent\textbf{KPI agreement.} A generated model matched the published line's reported
+throughput, maximum cycle time, energy per board and reflow-oven warm-up fraction to
+within 0.01\%. Table~\ref{tab:smt_baseline} gives the comparison.
 
 \begin{table}[!t]
 \centering
 \caption{SMT line: generated digital twin against the published reference model.}
 \label{tab:smt_baseline}
 \footnotesize
+\setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lrrr@{}}
 \toprule
-KPI & Published & Generated DT & Difference \\
+KPI & Published & DT & Diff. \\
 \midrule
 Throughput (boards/h)      & 40.3549 & 40.3547 & $-0.00\%$ \\
 Maximum cycle time (h)     & 1.6193  & 1.6194  & $+0.01\%$ \\
@@ -91,29 +91,23 @@ that the entire difference lies in that pre-line interval. The maximum cycle tim
 is set by the initial oven warm-up and is therefore unaffected by the convention, agrees
 to 0.01\%.
 
-\noindent\textbf{Description detail and assumption review.} The two description levels
-differ in what they determine. Structure was recovered from both. Behaviour was not always:
-the plain-language account states that the oven must reach temperature before it accepts
-boards, and gives a power rating for the oven when switched off, but does not say whether
-the oven ever switches off in normal operation. One candidate resolved that in favour of a
-unit that powers down whenever it falls idle, and so incurred a warm-up per batch rather
-than one at startup.
+\noindent\textbf{Assumption review.} The system description leaves one behavioural
+question open: it states that the oven must reach temperature before it accepts boards,
+and gives a power rating for the oven when switched off, but does not say whether the oven
+ever switches off in normal operation. The answer determines whether the oven warms up
+once at startup or before every batch, and so governs throughput, cycle time and energy.
+The generator records the assumptions it made alongside the model it produced, and every
+candidate that executed stated this one explicitly: the oven warms up once and then
+remains at temperature, as in the published model.
 
-That divergence was visible before the model was run. The generator records the
-assumptions it made alongside the model it produced, and this one was recorded explicitly,
-together with the reasoning that the description's mention of an off-state power rating
-implied a unit that switches off. Presented with that assumption, an expert familiar with
-the line corrects it directly, and the revised description or assumption set yields a
-model with the intended behaviour. This is the acceptance and revision mechanism of
-Stage~C rather than a failure of generation: ambiguity in the description is surfaced as a
-stated assumption for confirmation instead of being silently resolved. The dense
-specification, which names the warm-up as a component parameter, leaves no such latitude
-and required no revision.
-
-Plain language therefore determined the structure of this line reliably but
-underdetermined its behaviour, which is consistent with the division of labour the
-framework assumes: structural inference from a description, parameter values from
-telemetry, and expert confirmation of the assumptions that remain.
+The choice was therefore visible before any model was run. Had a candidate resolved it the
+other way, an expert familiar with the line would correct the stated assumption directly,
+and the revised description or assumption set would yield a model with the intended
+behaviour. This is the acceptance and revision mechanism of Stage~C: ambiguity in the
+description is surfaced as a stated assumption for confirmation instead of being silently
+resolved. The case is consistent with the division of labour the framework assumes:
+structural inference from a description, parameter values from telemetry, and expert
+confirmation of the assumptions that remain.
 
 \noindent\textbf{Structural change.} The published study also evaluates a structural
 modification. A buffering module is inserted between the placement machines and the reflow
@@ -137,11 +131,9 @@ therefore left to future work.
 values rather than measured factory KPIs, for the reason given above, and mean cycle time
 is not comparable because of the timestamping convention.
 
-Candidate generation is not deterministic, and the two kinds of deviation observed are
-handled differently. A deviation that follows from an ambiguity in the description appears
-as a stated assumption and is resolved by expert confirmation, as described above. A
-candidate may instead fail to execute because it uses a library interface that does not
-exist, such as an import of an absent module or a constructor argument a component does
-not accept. These are not resolvable by revising the description: they are caught by the
-execution check of Stage~C and handled by regeneration. Both were observed here, and
-neither produced a structurally incorrect model.
+Candidate generation is not deterministic. Four of the ten candidates failed to execute
+because they used a library interface that does not exist: two imported an absent module,
+and two declared power ratings for a machine state that FactorySimPy does not define.
+These are not resolvable by revising the description: they are caught by the execution
+check of Stage~C and handled by regeneration, and none produced a structurally incorrect
+model.

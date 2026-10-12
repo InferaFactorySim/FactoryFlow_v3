@@ -1,0 +1,132 @@
+[
+  {
+    "run": 1,
+    "ok": true,
+    "seconds": 92.5,
+    "code_chars": 5416,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 2,
+    "ok": true,
+    "seconds": 107.7,
+    "code_chars": 6434,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 3,
+    "ok": true,
+    "seconds": 136.1,
+    "code_chars": 5329,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 4,
+    "ok": true,
+    "seconds": 101.6,
+    "code_chars": 6434,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 5,
+    "ok": true,
+    "seconds": 87.6,
+    "code_chars": 5219,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 6,
+    "ok": true,
+    "seconds": 98.7,
+    "code_chars": 5138,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 7,
+    "ok": true,
+    "seconds": 129.8,
+    "code_chars": 5329,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 8,
+    "ok": true,
+    "seconds": 98.2,
+    "code_chars": 5138,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 9,
+    "ok": true,
+    "seconds": 110.4,
+    "code_chars": 5414,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  },
+  {
+    "run": 10,
+    "ok": true,
+    "seconds": 106.9,
+    "code_chars": 5214,
+    "state_keys": [
+      "assumptions",
+      "code",
+      "description",
+      "factorysimpy_api_docs",
+      "system_prompt"
+    ]
+  }
+]

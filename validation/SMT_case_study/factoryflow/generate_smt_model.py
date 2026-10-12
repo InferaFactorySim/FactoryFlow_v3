@@ -19,12 +19,17 @@ import json
 import time
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_FACTORYFLOW = r"C:\Users\leksh\dashboarding_working_30march_base\FactoryFlow"
+# The FactoryFlow generator (IM/) as used in the paper, copied into ../generator;
+# FACTORYFLOW_DIR can point at another FactoryFlow checkout instead.
+_FACTORYFLOW = os.environ.get(
+    "FACTORYFLOW_DIR", os.path.join(os.path.dirname(_HERE), "generator"))
+if not os.path.isdir(os.path.join(_FACTORYFLOW, "IM")):
+    sys.exit(f"no generator (IM/) in {_FACTORYFLOW}")
 _EXAMPLES = os.path.join(_FACTORYFLOW, "IM", "examples")
 _DESCRIPTION = os.path.join(_HERE, "smt_description.txt")
 _OUT = os.path.join(_HERE, "generated")
 
-for path in (_FACTORYFLOW, os.path.join(_FACTORYFLOW, "src")):
+for path in (os.path.join(os.path.dirname(_HERE), "src"), _FACTORYFLOW, os.path.join(_FACTORYFLOW, "src")):
     if path not in sys.path:
         sys.path.insert(0, path)
 
@@ -70,10 +75,13 @@ def read_description(which):
 def main():
     n_runs = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     which = sys.argv[2] if len(sys.argv) > 2 else "dense"
+    # An optional output folder keeps a batch from one fixed description apart from
+    # earlier batches generated from older wordings.
+    out_name = sys.argv[3] if len(sys.argv) > 3 else which
 
     # Candidates are kept per description and never overwritten: each batch continues
     # the numbering, so every candidate stays as re-runnable evidence.
-    out_dir = os.path.join(_OUT, which)
+    out_dir = os.path.join(_OUT, out_name)
     os.makedirs(out_dir, exist_ok=True)
     existing = [
         int(m.group(1))
@@ -84,6 +92,10 @@ def main():
     first_index = max(existing, default=0) + 1
 
     description = read_description(which)
+    # The exact text each batch was generated from is stored with its candidates.
+    with open(os.path.join(out_dir, f"description_used_{first_index}.txt"), "w",
+              encoding="utf-8") as handle:
+        handle.write(description)
 
     print(f"description: '{which}' section, {len(description)} chars "
           f"from {_DESCRIPTION}")

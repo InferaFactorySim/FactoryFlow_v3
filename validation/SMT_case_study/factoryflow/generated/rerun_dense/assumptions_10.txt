@@ -1,0 +1,6 @@
+1.  The `screen_printer`'s special behavior of a 28-unit cleaning cycle after every second board is not a standard machine parameter and is assumed to be implemented using a custom processing delay function that tracks the part count.
+2.  The service intervals for all `ServicedMachine` nodes (`screen_printer`, `pick_and_place_1`, `pick_and_place_2`) are assumed to be based on the number of parts processed since the last service.
+3.  The descriptive power states are assumed to map to the simulation framework's internal states. This includes: `processing` or `printing` to `PROCESSING_STATE`, `idle` to `STARVED_STATE`, `waiting_to_output` to `BLOCKED_STATE`, and `waiting_for_refill` or `waiting_for_reel_replacement` to `WAITING_FOR_OPERATOR_STATE`.
+4.  For the `reflow_oven`, the `warm-up` power rating is applied during its initial `node_setup_time`. The `temperature maintained` power rating is applied during all subsequent active states, as no power-down condition is specified.
+5.  The `work_capacity` for `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is assumed to be 1, as this parameter was not specified for these nodes.
+6.  The total transit time for a part on a conveyor belt is assumed to be the `delay` per slot multiplied by the belt's `capacity` (3 time units total).

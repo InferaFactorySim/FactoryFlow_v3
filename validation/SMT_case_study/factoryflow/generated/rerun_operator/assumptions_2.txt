@@ -1,0 +1,9 @@
+1.  The board source, which never runs out and always has the next stack ready, is modeled as a `BatchSource` with an `inter_arrival_time` of 0, meaning a new stack is available immediately after the previous one is fully dispatched.
+2.  The screen printer's automatic cleaning cycle is modeled as a service that is triggered after every second board, has a duration of 28 seconds, and does not require an operator.
+3.  The screen printer's solder and adhesive top-up is modeled as two separate, sequential service tasks, each requiring the operator for 60 seconds, with both being requested after every 100 boards are processed.
+4.  The buffering module, which "just passes them straight through", is modeled as a `Machine` with a `processing_delay` of 0.
+5.  The reflow oven is assumed to power down when it becomes idle (i.e., has no boards inside and no boards waiting to enter) and requires the full one-hour warm-up period before it can process the next board.
+6.  When multiple machines request service from the operator, the requests are served in a First-In, First-Out (FIFO) order.
+7.  All machines, except for the reflow oven whose capacity is specified, are assumed to process one board at a time, giving them a `work_capacity` of 1.
+8.  The simulation starts with all machines idle, all buffers empty, and the reflow oven in its "off" (cold) state.
+9.  For the screen printer and placement machines, the specified "idle" power consumption is assumed to apply to all non-processing states, including waiting for an operator or being blocked by a downstream component.

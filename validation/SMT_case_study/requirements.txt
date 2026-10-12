@@ -1,0 +1,12 @@
+# Tested with Python 3.9.19 and these versions.
+# Evaluation of the generated candidates
+simpy==4.1.1
+numpy==1.26.4
+graphviz==0.21   # imported by FactorySimPy; the Graphviz program is not needed
+pika==1.3.2      # imported by FactorySimPy's telemetry module
+
+# Generating new candidates (generate_smt_model.py) only
+langgraph==0.6.11
+langchain-core==0.3.79
+langchain-google-genai==2.0.0
+python-dotenv==1.0.1

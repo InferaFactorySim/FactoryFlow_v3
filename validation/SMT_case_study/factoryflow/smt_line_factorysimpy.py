@@ -91,7 +91,7 @@ import os
 import sys
 
 _FACTORYSIMPY_SRC = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "src")
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src")
 )
 if _FACTORYSIMPY_SRC not in sys.path:
     sys.path.insert(0, _FACTORYSIMPY_SRC)

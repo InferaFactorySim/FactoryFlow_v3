@@ -1,0 +1,12 @@
+1.  The source of board stacks, `source_1`, has an inter-arrival time of 0 between batches to model the described condition that the line never runs out of boards.
+2.  The `buffering_module` has a processing delay of 0 seconds, as it is described to "just pass them straight through".
+3.  The `screen_printer`'s autonomous 28-second cleaning cycle, which occurs after every second board, is modeled as part of its internal processing logic, not as an operator-serviced task or a random breakdown.
+4.  The two refill tasks for the `screen_printer` (solder and adhesive) are modeled as two distinct, sequential service requests that are both triggered after every 100 boards.
+5.  The `reflow_oven` performs its one-hour warm-up cycle only once at the beginning of the simulation and does not power down if it becomes idle thereafter.
+6.  The operator, `operator_1`, services requests from different machines in a First-In, First-Out (FIFO) order.
+7.  The operator's travel time between machines is zero.
+8.  Operator tasks are non-preemptive, meaning a task, once started, cannot be interrupted by another.
+9.  Machines do not experience any random failures or breakdowns beyond the specified, periodic service requirements.
+10. The `work_capacity` for the `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is one board at a time.
+11. The `BatchSource` node `source_1` is blocking, which is a requirement for this node type to hold a batch while it is being dispensed.
+12. Task names for operator services are inferred (e.g., `solder_top_up`, `adhesive_top_up`, `reel_change`).

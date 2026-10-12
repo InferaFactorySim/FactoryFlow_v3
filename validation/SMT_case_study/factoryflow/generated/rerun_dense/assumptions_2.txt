@@ -1,0 +1,5 @@
+1.  The `reflow_oven` is modeled as a `PowerCycledMachine` to accommodate the specified `node_setup_time` (mapped to `setup_time`) and warm-up behavior, as the standard `Machine` type does not support these features.
+2.  The `reflow_oven` is assumed to start in an "off" state and must complete its 3600-unit warm-up cycle before processing the first part. It is also assumed that it does not power down automatically when idle.
+3.  The `screen_printer`'s processing logic, a delay of 18 per board plus a 28-unit cleaning cycle after every second board, will be implemented as a custom processing delay function.
+4.  The `work_capacity` for the `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is assumed to be 1, as it is not specified.
+5.  The power consumption values provided for descriptive states (e.g., 'printing', 'idle', 'waiting_for_refill') are mapped to the corresponding internal states of the simulation components (e.g., `PROCESSING_STATE`, `IDLE_STATE`, `WAITING_FOR_OPERATOR_STATE`) to enable energy tracking. For the `reflow_oven`, the 'temperature maintained' power rating is applied to all its active states.

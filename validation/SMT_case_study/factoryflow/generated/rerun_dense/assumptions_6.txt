@@ -1,0 +1,6 @@
+1.  The `reflow_oven` is modeled as a `PowerCycledMachine` to accommodate its specified `node_setup_time` (warm-up) and distinct power states (`off`, `warm-up`).
+2.  The `reflow_oven` does not power down when idle (`power_down_when_idle` is `False`), as its temperature is maintained whether it is occupied or not.
+3.  The processing delay for the `screen_printer` is implemented using a custom function that tracks the number of boards processed, adding a 28-unit cleaning time to the base 18-unit processing time for every second board.
+4.  The `work_capacity` for `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` is assumed to be 1, as it is not specified.
+5.  The power ratings given in the description are mapped to the simulator's standard machine states. Specifically, 'idle' power is used for both `IDLE` and `STARVED` states, and 'waiting for service' power is used for the `WAITING_FOR_OPERATOR` state. For the `reflow_oven`, the 'temperature maintained' power rating is applied to all "on" states (`IDLE`, `STARVED`, `PROCESSING`, `BLOCKED`).
+6.  The service "interval" for `ServicedMachine` nodes is interpreted as being based on the number of parts processed since the last service.

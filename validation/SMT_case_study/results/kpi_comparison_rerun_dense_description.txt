@@ -1,0 +1,25 @@
+================================================================================================
+10 generated candidates, deviation from the published KPIs (%)
+================================================================================================
+candidate        nodes  buf belt conn  pwr   thrupt   maxcyc   energy   warmup
+------------------------------------------------------------------------------------------------
+rerun_dense\generated_1.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_dense\generated_10.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.constants'
+rerun_dense\generated_2.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_dense\generated_3.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.models'
+rerun_dense\generated_4.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_dense\generated_5.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.utils.enums'
+rerun_dense\generated_6.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_dense\generated_7.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.constants'
+rerun_dense\generated_8.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_dense\generated_9.py     9    5    2    7    5  -79.41%  289.71%  486.33% 2285.24%
+------------------------------------------------------------------------------------------------
+executed unrepaired: 6/10
+  |throughput | deviation: min  0.00%  median  0.00%  max 79.41%
+  |max cycle  | deviation: min  0.01%  median  0.01%  max 289.71%
+  |energy     | deviation: min  0.01%  median  0.01%  max 486.33%
+  |warm-up    | deviation: min  0.00%  median  0.00%  max 2285.24%
+  rerun_dense\generated_10.py: ModuleNotFoundError: No module named 'factorysimpy.constants'
+  rerun_dense\generated_3.py: ModuleNotFoundError: No module named 'factorysimpy.models'
+  rerun_dense\generated_5.py: ModuleNotFoundError: No module named 'factorysimpy.utils.enums'
+  rerun_dense\generated_7.py: ModuleNotFoundError: No module named 'factorysimpy.constants'

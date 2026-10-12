@@ -1,0 +1,9 @@
+Setting,Value,Scope,Configuration
+Routing-difference threshold,0.15,Absolute successor-fraction difference,ROUTING_THRESHOLD
+Minimum routing observations,10,Departures from a routing component,MIN_ROUTING_SAMPLES
+Rolling routing window,50,Recent departures per component,ROUTING_WINDOW_SIZE
+Transition-silence window,60,Simulation-time units,REMOVAL_WINDOW
+Removal eligibility,5,Completed paths per sink detector,Fixed guard
+Reconciliation interval,5,Wall-clock seconds,RECONCILIATION_INTERVAL
+Recent-activity requirement,true,Service-wide Boolean,REQUIRE_RECENT_ACTIVITY
+Stream-activity timeout,120,Wall-clock seconds,ACTIVITY_TIMEOUT

@@ -1,0 +1,8 @@
+1.  The `reflow_oven` is described with a setup time and power states for 'off' and 'warm-up'. This behavior will be modeled using the `PowerCycledMachine` node type, which is assumed to power down when idle.
+2.  The `reflow_oven`'s processing delay of 50 is assumed to apply to the entire batch of up to 10 boards being processed simultaneously, which is standard for a batch machine.
+3.  The `screen_printer`'s cleaning cycle (a 28-unit delay after every second board) is not an operator service. It will be modeled as part of a custom processing delay function, where the machine's total processing time alternates between 18 for the first board and 46 (18 + 28) for the second.
+4.  The power consumption for the `screen_printer` is assumed to be 500W during its 18-unit printing phase and 1000W during its 28-unit cleaning phase.
+5.  The described power states are mapped to the simulation model's internal states. Specifically, 'waiting for service' maps to `WAITING_FOR_OPERATOR_STATE`, 'waiting to output' maps to `BLOCKED_STATE`, and for the oven, 'temperature maintained' applies to both `IDLE_STATE` and `PROCESSING_STATE`.
+6.  The two services for the `screen_printer` (`solder_refill` and `adhesive_refill`) are assumed to be tracked by independent counters. Each service becomes due after 100 parts are processed since that specific service was last performed.
+7.  A default `work_capacity` of 1 will be used for all machines where it is not specified (`line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, `buffering_module`).
+8.  The `buffering_module`'s power consumption of 250W is assumed to be constant across all its operational states (idle, processing, blocked).

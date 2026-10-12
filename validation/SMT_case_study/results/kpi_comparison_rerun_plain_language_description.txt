@@ -1,0 +1,25 @@
+================================================================================================
+10 generated candidates, deviation from the published KPIs (%)
+================================================================================================
+candidate        nodes  buf belt conn  pwr   thrupt   maxcyc   energy   warmup
+------------------------------------------------------------------------------------------------
+rerun_operator\generated_1.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_operator\generated_10.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_operator\generated_2.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.utils.states'
+rerun_operator\generated_3.py     9    5    2    7    5  FAILED: ValueError: screen_printer - unknown state 'SERVICE_STATE'. Known states: ['ALL_ACTIVE_BLO
+rerun_operator\generated_4.py     -    -    -    -    -  FAILED: ModuleNotFoundError: No module named 'factorysimpy.utils.states'
+rerun_operator\generated_5.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+rerun_operator\generated_6.py     9    5    2    7    4   -0.00%    0.01%    0.01%   -0.00%
+rerun_operator\generated_7.py     9    5    2    7    5  FAILED: ValueError: screen_printer - unknown state 'SERVICE_STATE'. Known states: ['ALL_ACTIVE_BLO
+rerun_operator\generated_8.py     9    5    2    7    4   -0.00%    0.01%    0.01%   -0.00%
+rerun_operator\generated_9.py     9    5    2    7    5   -0.00%    0.01%    0.01%   -0.00%
+------------------------------------------------------------------------------------------------
+executed unrepaired: 6/10
+  |throughput | deviation: min  0.00%  median  0.00%  max  0.00%
+  |max cycle  | deviation: min  0.01%  median  0.01%  max  0.01%
+  |energy     | deviation: min  0.01%  median  0.01%  max  0.01%
+  |warm-up    | deviation: min  0.00%  median  0.00%  max  0.00%
+  rerun_operator\generated_2.py: ModuleNotFoundError: No module named 'factorysimpy.utils.states'
+  rerun_operator\generated_3.py: ValueError: screen_printer - unknown state 'SERVICE_STATE'. Known states: ['ALL_ACTIVE_BLO
+  rerun_operator\generated_4.py: ModuleNotFoundError: No module named 'factorysimpy.utils.states'
+  rerun_operator\generated_7.py: ValueError: screen_printer - unknown state 'SERVICE_STATE'. Known states: ['ALL_ACTIVE_BLO

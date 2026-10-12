@@ -1,0 +1,7 @@
+1.  The components described are mapped to the following supported node and edge types: `source_1` is a `BatchSource`; `line_loader` and `buffering_module` are `Machine` nodes; `screen_printer`, `pick_and_place_1`, and `pick_and_place_2` are `ServicedMachine` nodes; `reflow_oven` is a `PowerCycledMachine`; `operator_1` is a `HumanOperator`; `sink_1` is a `Sink`; `belt_sp_pp1` and `belt_bm_rfo` are `ConveyorBelt` edges; and the single board positions (`b0`, `b1`, `b2`, `b3`, `b4`) are `Buffer` edges.
+2.  The statement that the line "never run out of boards" is interpreted to mean the time between new stacks arriving at the source is zero. The `inter_arrival_time` for the `BatchSource` is therefore set to 0.
+3.  The `screen_printer`'s automated cleaning cycle ("the machine does this by itself") is modeled as a self-service task that does not require the operator.
+4.  The solder and adhesive top-ups for the `screen_printer` are modeled as two separate service tasks that are requested concurrently after every 100 boards, both requiring the operator.
+5.  The `reflow_oven` heats up once at the beginning of the simulation and is assumed to remain at temperature, without powering down when idle, for the duration of the run.
+6.  The `buffering_module` that "just passes them straight through" is modeled as a machine with a processing delay of 0 seconds.
+7.  For any component parameters not specified in the description, such as the operator's task selection policy, the default values of the simulation framework are used.

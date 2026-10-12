@@ -1,0 +1,10 @@
+1.  The node and edge names and their types are inferred from the user's description and the list of supported types (e.g., `source_1` is a `BatchSource`, `screen_printer` is a `ServicedMachine`, `belt_sp_pp1` is a `ConveyorBelt`, etc.).
+2.  The time between new stacks of boards arriving at `source_1` (`inter_arrival_time`) is not specified; based on the description "we never run out of boards" and "always have the next stack ready", this is assumed to be 0.
+3.  The `screen_printer`'s automatic cleaning cycle is modeled as a service task named `cleaning`. Since the description states "the machine does this by itself and nobody has to attend to it", it is assumed this service does not require the shared `operator_1` and is handled by a dedicated, internal resource that is always available.
+4.  The specific names for the service tasks are not provided. They are assumed to be `solder_top_up` and `adhesive_top_up` for the `screen_printer`, and `reel_change_pp1` and `reel_change_pp2` for `pick_and_place_1` and `pick_and_place_2` respectively.
+5.  The `buffering_module` "just passes them straight through", so its processing delay is assumed to be 0.
+6.  The `reflow_oven` heats up from cold but is not described as powering down when idle. It is assumed to heat up once at the start of the simulation and then remain at operating temperature.
+7.  The queuing policy for the `operator_1` is not specified; a First-In, First-Out (FIFO) discipline is assumed for handling service requests.
+8.  The number of boards that machines can process simultaneously (`work_capacity`) is not specified for most machines. The `line_loader`, `screen_printer`, `pick_and_place_1`, `pick_and_place_2`, and `buffering_module` are all assumed to have a `work_capacity` of 1.
+9.  The initial state of the system at time 0 is not described. It is assumed that all buffers are empty, all machines are idle, all service counters are at zero, and the `reflow_oven` starts in a cold, 'OFF' state.
+10. For any other component parameters not specified in the description, the simulation library's default values are used.
