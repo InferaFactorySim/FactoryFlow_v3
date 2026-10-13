@@ -46,7 +46,7 @@ def job(rep):
 
 
 if __name__ == "__main__":
-    with Pool(4) as pool:
+    with Pool(int(os.environ.get("S3_WORKERS", "4"))) as pool:
         stale = pool.map(job, range(T.REPS))
     prev = json.load(open(T.OUT))
     out = os.path.join(os.path.dirname(T.OUT), "s3_twin_kpis_phaseAB.json")

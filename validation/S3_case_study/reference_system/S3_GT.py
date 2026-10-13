@@ -323,6 +323,13 @@ def snapshot(model, now):
     """
     sink, source = model.sink, model.source
     machines, belts = model.machines(), model.belts()
+    # FactorySimPy adds time to a state only when the state changes, so bring every
+    # machine and belt up to `now`; otherwise a component that stays in one state
+    # (an unfed line in phase C) contributes no time, and no energy, to the window.
+    for m in machines:
+        m.update_state_rep(now)
+    for b in belts:
+        b.update_state(b.state, now)
     buffers = [e for line in model.lines for e in line.edges if isinstance(e, Buffer)]
     buffers += model.entry_buffers + model.exit_buffers
 

@@ -1,4 +1,4 @@
-"""E5 - Recovery & Alert Lifecycle.
+"""E6 - Recovery & Alert Lifecycle.
 
 Cases: permanent recovery (remove the 30% branch, detect, then restore) and
 intermittent recovery (branch repeatedly toggled). Evaluates the resolve half of
@@ -104,7 +104,7 @@ def run_intermittent(dt, base):
 
 
 def run(output="eval_recovery.csv"):
-    print("\n=== E5 - Recovery & Alert Lifecycle ===")
+    print("\n=== E6 - Recovery & Alert Lifecycle ===")
     dt, base = ec.build_baseline()
 
     perm = run_permanent(dt, base)

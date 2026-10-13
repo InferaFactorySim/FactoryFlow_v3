@@ -1,7 +1,7 @@
 # S2 case study — parameter assimilation and KPI agreement
 
-Material behind Section 6.2.2, *Parameter Assimilation and KPI Agreement*, and
-**Table 8**: processing-time distributions fitted by DataFITR are given to a
+Material behind Section 6.2.2, *Parameter Assimilation and KPI Agreement*, whose
+KPI comparison is given in the text: processing-time distributions fitted by DataFITR are given to a
 structurally identical FactorySimPy Digital Twin, and the twin's KPIs are compared
 with those of the reference system over 1,000 replications of 10,000 time units
 each.
@@ -23,15 +23,16 @@ from a folder of delay generators:
   `dist_baselines.json`.
 
 The fitted family equals the generating family for nine of the ten machines; `M8`
-is gamma in the reference and was fitted as Weibull, as stated in the paper.
+is gamma in the reference and was fitted as Weibull. The paper says only that one
+stage was fitted with a different family with similar effective timing.
 
 ## Where each result in the paper comes from
 
 | Paper | File |
 |---|---|
-| Table 8, reference mean (SD) | `results/modelA_1000_runs_summary.csv` (per run: `modelA_1000_runs_kpis.csv`) |
-| Table 8, DT mean (SD) | `results/modelA_1000_runs_summary_matched.csv` (per run: `modelA_1000_runs_kpis_matched.csv`) |
-| Table 8, relative difference | `results/modelA_paired_precision_summary.csv`, rows with `n = 1000` (per run pair: `modelA_1000_runs_paired_differences.csv`) |
+| Reference throughput and mean cycle time (0.1979, 73.36) | `results/modelA_1000_runs_summary.csv` (per run: `modelA_1000_runs_kpis.csv`) |
+| DT throughput and mean cycle time (0.1981, 73.73) | `results/modelA_1000_runs_summary_matched.csv` (per run: `modelA_1000_runs_kpis_matched.csv`) |
+| Relative differences (+0.11%, +0.51%) | `results/modelA_paired_precision_summary.csv`, rows with `n = 1000` (per run pair: `modelA_1000_runs_paired_differences.csv`) |
 | Nine of ten families recovered | `model/gencodeforAMG_10/dist_baselines.json` against `model/gencodeforAMG_10_ref/` |
 
 Run *i* of the reference and run *i* of the twin use the same seed

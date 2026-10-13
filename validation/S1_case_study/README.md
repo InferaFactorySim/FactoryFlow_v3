@@ -37,16 +37,23 @@ routing fraction is judged) are in `results/structural_monitor_settings.csv`.
 | E2 Removal (3 cases; "3% route" is `remove_low_freq`) | `experiments/eval_removal.py` | `results/raw_trials/eval_removal.csv` |
 | E3 Routing (3 cases) | `experiments/eval_routing.py` | `results/raw_trials/eval_routing.csv` |
 | E4 Combined (2 cases) | `experiments/eval_combined.py` | `results/raw_trials/eval_combined.csv` |
-| E5 Recovery (2 cases) | `experiments/eval_recovery.py` | `results/raw_trials/eval_recovery.csv` |
-| E7 Independent path | `experiments/eval_independent_path.py` | `results/raw_trials/eval_independent_path.csv` |
+| E5 Independent path | `experiments/eval_independent_path.py` | `results/raw_trials/eval_independent_path.csv` |
+| E6 Recovery (2 cases; in the text, not Table 7) | `experiments/eval_recovery.py` | `results/raw_trials/eval_recovery.csv` |
 
-The suite's E6, a detection-sensitivity sweep (`tests/eval_sensitivity.py`), is not
-reported in the paper, so it is not included here; Table 7's caption notes the gap.
+The paper and this folder number the cases differently from the development suite,
+which had E5 recovery, E6 a detection-sensitivity sweep (`tests/eval_sensitivity.py`)
+and E7 independent path. The sensitivity sweep is not reported in the paper and is not
+included here; the independent-path case is E5 and the recovery cases are E6.
 
 `results/summarise_table7.py` recomputes every row of Table 7 from the per-trial
-files; its output matches the published table exactly.
+files; its detected counts match the published table exactly. The script also prints
+precision, detection latency and resolution for each case. The paper reports only the
+detected counts in Table 7 and describes latency in the text. Precision is not reported
+because `harness/metrics.py` counts each false alert per log entry (a routing alert is
+logged once per outgoing branch and again each time it re-activates) while true alerts
+are counted per condition, so the printed precision understates the per-condition value.
 `results/table8_case_summary.csv` describes each case (initial system, change made,
-schedule, expected target conditions, outcome); it covers E0–E5, and E7 is in the
+schedule, expected target conditions, outcome); it covers E0–E4 and E6, and E5 is in the
 per-trial file only.
 
 The per-trial files are the runs of 5 August 2026 (E0: 30 July). Earlier runs
@@ -80,8 +87,8 @@ python experiments/eval_addition.py           # E1
 python experiments/eval_removal.py            # E2
 python experiments/eval_routing.py            # E3
 python experiments/eval_combined.py           # E4
-python experiments/eval_recovery.py           # E5
-python experiments/eval_independent_path.py   # E7
+python experiments/eval_independent_path.py   # E5
+python experiments/eval_recovery.py           # E6
 python results/summarise_table7.py rerun      # Table 7 from the rerun
 python results/summarise_table7.py            # Table 7 from the published trials
 ```

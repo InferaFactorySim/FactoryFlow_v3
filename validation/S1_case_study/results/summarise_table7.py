@@ -27,7 +27,7 @@ CASES = [
     ("E3 Routing: gradual to 40/60", "eval_routing.csv", "gradual_40_60"),
     ("E4 Combined: addition plus routing", "eval_combined.csv", "add+routing"),
     ("E4 Combined: addition plus removal", "eval_combined.csv", "add+remove"),
-    ("E7 Independent path", "eval_independent_path.csv",
+    ("E5 Independent path", "eval_independent_path.csv",
      "independent_path_addition_withdrawal"),
 ]
 
@@ -68,8 +68,8 @@ def main():
                   statistics.mean(resolve_mean), max(resolve_max)))
 
     rows = read("eval_recovery.csv")
-    for label, condition in (("E5 Recovery: restored branch", "permanent_recovery"),
-                             ("E5 Recovery: four on/off cycles", "intermittent_recovery")):
+    for label, condition in (("E6 Recovery: restored branch", "permanent_recovery"),
+                             ("E6 Recovery: four on/off cycles", "intermittent_recovery")):
         trials = [r for r in rows if r["condition"] == condition]
         latency = values(trials, "resolution_latency")
         text = ("  resolution {:.1f}/{:.1f}".format(statistics.mean(latency), max(latency))

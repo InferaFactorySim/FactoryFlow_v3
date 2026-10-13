@@ -76,7 +76,7 @@ def job(spec):
 if __name__ == "__main__":
     specs = [(k, r) for r in range(REPS) for k in ("ref", "dt0", "dt1")]
     os.makedirs(RERUN, exist_ok=True)
-    with Pool(4) as pool:
+    with Pool(int(os.environ.get("S3_WORKERS", "4"))) as pool:
         results = pool.map(job, specs)
     json.dump(results, open(OUT, "w"), indent=1, default=float)
     by = {}

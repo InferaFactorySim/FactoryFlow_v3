@@ -7,9 +7,10 @@ trust a number.
 > **Note for this folder.** This is the guide to the full suite as it was written
 > in the development tree, where the scripts lived in `tests/` and the harness in
 > `tests/harness/`; here they are in `experiments/` and `experiments/harness/`.
-> Only the experiments reported in Table 7 (E0–E5, E7) are included in this
-> folder; E6 (sensitivity), the continuous, robustness and end-to-end KPI
-> experiments described below are not. See `../README.md` for how to run them.
+> Only the experiments reported in the paper (E0–E6) are included in this
+> folder. Here and in the paper the independent-path case is E5 (E7 in the
+> development suite) and the recovery cases are E6 (E5 in the development suite);
+> the sensitivity sweep (E6 in the development suite), the continuous, robustness and end-to-end KPI experiments described below are not. See `../README.md` for how to run them.
 
 ---
 
@@ -64,7 +65,7 @@ Fixed inputs (defaults in `reference_model.py` / `eval_common.py`):
 | `routing_threshold` (theta) | 0.15 | routing-shift alert threshold |
 | `min_routing_samples` | 10 | samples before routing is judged |
 | trials/condition | 20 | randomized `t_change` in [50,100], seeded |
-| trial duration | 300 (500 for E6 structural) | time units |
+| trial duration | 300 (500 for the sensitivity sweep's structural axis) | time units |
 
 Structural change is induced **only** by changing `out_edge_selection` on the branch
 machines (the topology is static) — so "add", "remove", and "routing change" are all
@@ -137,7 +138,9 @@ derived automatically by diffing a steady modified run against the DT graph.
 - **Confidence:** addition part is tight; routing/removal parts carry E3/E2 variance.
   Report per-type, since a single "combined recall" hides which change was missed.
 
-## E5 — Recovery & Alert Lifecycle  (`eval_recovery.py`)
+## E6 — Recovery & Alert Lifecycle  (`eval_recovery.py`)
+
+(E5 in the development suite.)
 
 - **Model / inputs:** reference model. Cases: `permanent_recovery` (remove the branch
   over [t1, t1+120], then restore) and `intermittent_recovery` (toggle the branch every
@@ -152,7 +155,7 @@ derived automatically by diffing a steady modified run against the DT graph.
 - **Confidence:** resolution latency has small variance → tight CI at N=20. Flapping
   counts are near-deterministic given the toggle schedule; N=20 is ample.
 
-## E6 — Detection Sensitivity  (`eval_sensitivity.py`)  *(slow)*
+## Detection Sensitivity (E6 in the development suite; not included)  (`eval_sensitivity.py`)  *(slow)*
 
 - **Model / inputs:** reference model. Routing axis: M1 shift ∈ {0.05,0.10,0.15,0.20,
   0.50}. Structural axis: new edge carrying ∈ {1,5,10,20,50}% of M2 flow (500-u runs).
@@ -205,7 +208,7 @@ derived automatically by diffing a steady modified run against the DT graph.
 **Why one run is never enough.** Every run is a single random realization: item
 arrivals, the 70/30 and QC routing draws, and the exact time the first item takes a
 new edge are all stochastic. A single run gives one point that can move a lot,
-especially near a threshold (E3 moderate shift, E6 boundary magnitudes, E2 low-freq).
+especially near a threshold (E3 moderate shift, sensitivity-sweep boundary magnitudes, E2 low-freq).
 Reproducibility comes from per-trial seeds + a randomized `t_change`, so 20 trials
 sample the distribution deterministically.
 
@@ -228,11 +231,13 @@ sample the distribution deterministically.
 (additions, removals, recovery). Bump to **N=40–50** for the headline numbers that go
 in the paper's routing and sensitivity results, and **always report the interval**
 (Wilson for rates, ± CI for latencies) rather than a bare point estimate. To change N,
-edit `N_TRIALS` in `tests/harness/eval_common.py` (and `SENS_TRIALS`/loop bounds for E6).
+edit `N_TRIALS` in `tests/harness/eval_common.py` (and `SENS_TRIALS`/loop bounds for the sensitivity sweep).
 
 ---
 
-## E7 - Complete Independent Path Addition and Withdrawal (`eval_independent_path.py`)
+## E5 - Complete Independent Path Addition and Withdrawal (`eval_independent_path.py`)
+
+(E7 in the development suite.)
 
 - **Model / inputs:** the dormant one-machine system
   `src_new -> B_new1 -> M_new -> B_new2 -> sink_new`. Its source is activated for

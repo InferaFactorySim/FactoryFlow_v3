@@ -1,4 +1,4 @@
-"""E7 - Complete Independent Path Addition and Withdrawal.
+"""E5 - Complete Independent Path Addition and Withdrawal.
 
 Temporarily activate the dormant one-machine line:
 
@@ -39,7 +39,7 @@ FIELDS = [
 
 
 def run(output="eval_independent_path.csv", n_trials=ec.N_TRIALS):
-    print("\n=== E7 - Complete Independent Path Addition and Withdrawal ===")
+    print("\n=== E5 - Complete Independent Path Addition and Withdrawal ===")
     dt, _baseline_events = ec.build_baseline()
     rows = []
 
@@ -65,7 +65,7 @@ def run(output="eval_independent_path.csv", n_trials=ec.N_TRIALS):
             dio.sink_entries(events),
             removal_window=ec.REMOVAL_WINDOW,
             # Isolate the structural lifecycle under test. Routing sensitivity
-            # is evaluated independently by E3/E6 and can otherwise add random
+            # is evaluated independently by E3 and the sensitivity sweep and can otherwise add random
             # branch alerts from the unchanged main line to this experiment.
             routing_threshold=1.0,
         )

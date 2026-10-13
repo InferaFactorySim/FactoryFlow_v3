@@ -27,7 +27,7 @@ reference, namely until 1024 boards had been completed, and its KPIs were compar
 the published values. The system description is an account of the line of the kind a
 production engineer would give, naming the components and stating their timings and power
 draw. Because model generation is not deterministic, ten candidates were generated from
-the same system description.
+the same system description with Gemini~2.5~Pro.
 
 \noindent\textbf{Model size and parameters.} The line comprises eight flow nodes, one
 operator and seven edges: a source, five machines, a pass-through module and a sink,
@@ -54,9 +54,10 @@ recognition that boards arriving in stacks require a batch-releasing source rath
 per-item one. Structure was therefore recovered reliably from the system description,
 without component or connection errors.
 
-\noindent\textbf{KPI agreement.} A generated model matched the published line's reported
-throughput, maximum cycle time, energy per board and reflow-oven warm-up fraction to
-within 0.01\%. Table~\ref{tab:smt_baseline} gives the comparison.
+\noindent\textbf{KPI agreement.} All six executing candidates matched the published line's
+reported throughput, maximum cycle time, energy per board and reflow-oven warm-up fraction
+to within 0.01\%. Table~\ref{tab:smt_baseline} gives the values for one candidate; the
+other five agree with the published values to the same precision.
 
 \begin{table}[!t]
 \centering
@@ -68,15 +69,15 @@ within 0.01\%. Table~\ref{tab:smt_baseline} gives the comparison.
 \toprule
 KPI & Published & DT & Diff. \\
 \midrule
-Throughput (boards/h)      & 40.3549 & 40.3547 & $-0.00\%$ \\
+Throughput (boards/h)      & 40.3549 & 40.3547 & $0.00\%$ \\
 Maximum cycle time (h)     & 1.6193  & 1.6194  & $+0.01\%$ \\
 Energy per board (kJ)      & 2427.29 & 2427.65 & $+0.01\%$ \\
-Oven warm-up fraction (\%) & 3.9409  & 3.9409  & $-0.00\%$ \\
+Oven warm-up fraction (\%) & 3.9409  & 3.9409  & $0.00\%$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-All four KPIs agree to within 0.01\%. Energy follows from the per-state power ratings the
+Energy follows from the per-state power ratings the
 generated model declares on its components together with the time each component spends in
 each state, so it is an output of the generated model rather than a separate calculation.
 The operator was occupied for 3.94\% of the run and no service request queued, so operator
@@ -86,10 +87,10 @@ would not have been visible had the service time been folded into the processing
 Mean cycle time is excluded because it is not comparable. The reference creates a stack of
 sixteen boards and timestamps all sixteen at the instant the stack is created, so a board
 accumulates waiting time before it enters the line. Instrumenting per-board residence
-times shows that the time spent inside components is identical across configurations and
-that the entire difference lies in that pre-line interval. The maximum cycle time, which
-is set by the initial oven warm-up and is therefore unaffected by the convention, agrees
-to 0.01\%.
+times shows that changing how many stacks wait at the head of the line changes only this
+pre-line interval; the time a board spends inside the components is unchanged. The maximum
+cycle time is set by the initial oven warm-up and is therefore unaffected by the
+convention.
 
 \noindent\textbf{Assumption review.} The system description leaves one behavioural
 question open: it states that the oven must reach temperature before it accepts boards,
@@ -106,26 +107,18 @@ and the revised description or assumption set would yield a model with the inten
 behaviour. This is the acceptance and revision mechanism of Stage~C: ambiguity in the
 description is surfaced as a stated assumption for confirmation instead of being silently
 resolved. The case is consistent with the division of labour the framework assumes:
-structural inference from a description, parameter values from telemetry, and expert
-confirmation of the assumptions that remain.
+structural inference from a description, parameter values from telemetry where it is
+available (here they were stated in the description), and expert confirmation of the
+assumptions that remain.
 
-\noindent\textbf{Structural change.} The published study also evaluates a structural
-modification. A buffering module is inserted between the placement machines and the reflow
-oven so that boards accumulate while the oven is switched off and then pass through it in
-a batch. Because the oven holds temperature at 25.8\,kW while idle but draws only 320\,W
-when off, the modification trades a warm-up before each batch, and boards waiting in the
-buffer, against a reduction in energy.
-
-Expressing this change required no new component behaviour: the accumulating stage becomes
-a buffer that withholds boards while filling and closes its entry until it has completely
-drained, and the oven becomes a component that switches off when idle and serves a warm-up
-computed from its cooling law. Both are parameter choices on existing components, so the
-modification is within the same generation path as the unmodified line. Reproducing the
-published energy figures for this configuration additionally requires the control policy
-that governs when the oven is commanded on relative to the filling of the buffer, which
-determines how much of the warm-up overlaps the accumulation phase. That policy is outside
-the scope of model generation, and the quantitative comparison for the modified line is
-therefore left to future work.
+\noindent\textbf{Scope.} The published study evaluates the line in three
+configurations: the line as installed, and two variants in which a buffering
+module accumulates boards so that the reflow oven can be switched off between
+batches. This case study considers only the first. Its purpose is not to repeat
+the energy study but to show that FactoryFlow, and the FactorySimPy library it
+composes, extend beyond constructed reference systems to a line in industrial
+operation, with a shared human operator, a batch-fed source, and a multi-board
+oven that must reach temperature before it accepts any board.
 
 \noindent\textbf{Limitations.} The comparison targets are the published model's reported
 values rather than measured factory KPIs, for the reason given above, and mean cycle time

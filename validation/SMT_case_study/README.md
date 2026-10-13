@@ -30,7 +30,7 @@ not from this work.
     supporting analyses and component tests.
 - **`results/`** — evaluation outputs (regenerated from the files above):
   - `kpi_comparison_rerun_plain_language_description.txt` (the set in the paper,
-    Table 14) and `kpi_comparison_rerun_dense_description.txt` — each final-set
+    Table 12) and `kpi_comparison_rerun_dense_description.txt` — each final-set
     candidate's deviation from the published throughput, maximum cycle time,
     energy per board and reflow-oven warm-up fraction;
     `kpi_comparison_plain_language_description.txt` and
@@ -98,7 +98,7 @@ evaluation needs nothing outside this folder. From `factoryflow/`:
 
 ```
 pip install -r ../requirements.txt
-python evaluate_all.py generated/rerun_operator     # Table 14: the set in the paper
+python evaluate_all.py generated/rerun_operator     # Table 12: the set in the paper
 python evaluate_all.py generated/rerun_dense
 python evaluate_all.py generated/operator           # earlier set
 python evaluate_all.py generated/dense
